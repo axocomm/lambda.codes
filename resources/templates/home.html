@@ -12,8 +12,10 @@
         <h1 id="home-title">xyzy</h1>
         <ul id="home-nav-items">
           {% for item in navigation %}
-          <li class="home-nav-{{ item.name }}">
-            <a href="{{ item.href }}" data-title="{{ item.name }}"{% if 'target' in item %}target="{{ item.target }}"{% endif %}>
+          <li class="home-nav-{{ item.name }}"
+            data-title="{{ item.name }}">
+            <a href="{{ item.href }}"{% if item.target %}
+              target="{{ item.target }}"{% endif %}>
               <i class="fa fa-fw fa-{{ item.icon }}"></i>
             </a>
           </li>
