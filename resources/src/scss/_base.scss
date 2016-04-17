@@ -1,0 +1,78 @@
+body {
+  font-family: $sans-font;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #000;
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: #333;
+  }
+}
+
+code,
+pre {
+  font-family: 'Oxygen Mono', monospace;
+  font-size: 14px;
+}
+
+ul,
+li {
+  list-style-type: disc;
+}
+
+li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 25px;
+  line-height: 1.2;
+}
+
+table {
+  width: 100%;
+  margin: 0 auto;
+
+  thead {
+    border-bottom: 3px solid #000;
+    font-weight: bold;  
+  }
+
+  tr {
+    td,
+    th {
+      padding: 20px 20px 20px 0px;      
+    }
+  }
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+main#content {
+  max-width: 720px;
+  margin-left: 240px;
+  text-align: justify;
+  padding-right: 40px;
+
+  img {
+    max-width: 100%;
+    text-align: center;    
+  }
+}
+
+.row .one-half {
+  width: 50%;
+  float: left;
+}

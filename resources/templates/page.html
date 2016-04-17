@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Foo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+  <body>
+    <header>
+      <div id="site-logo">
+        <a href="/">
+          <i class="fa fa-fw fa-star-half-o"></i>
+        </a>
+        <span class="site-title">xyzy</span>
+      </div>
+      <nav id="main">
+        <ul>
+          <li class="nav-about active">
+            <a href="/about">
+              <i class="fa fa-fw fa-info"></i>
+            </a>
+            <span class="item-title">about</span>
+          </li>
+          <li class="nav-projects">
+            <a href="/projects">
+              <i class="fa fa-fw fa-code"></i>
+            </a>
+            <span class="item-title">projects</span>
+          </li>
+          <li class="nav-github">
+            <a href="https://github.com/axocomm" target="blank">
+              <i class="fa fa-fw fa-github"></i>
+            </a>
+            <span class="item-title">github</span>
+          </li>
+          <li class="nav-bitbucket">
+            <a href="https://bitbucket.org/axocomm" target="blank">
+              <i class="fa fa-fw fa-bitbucket"></i>
+            </a>
+            <span class="item-title">bitbucket</span>
+          </li>
+          <li class="nav-linkedin">
+            <a href="https://www.linkedin.com/in/tmaglione" target="blank">
+              <i class="fa fa-fw fa-linkedin"></i>
+            </a>
+            <span class="item-title">linkedin</span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="content">
+      <h1>About</h1>
+      <p>Foo {{ page }}</p>
+    </main>
+  </body>
+</html>
