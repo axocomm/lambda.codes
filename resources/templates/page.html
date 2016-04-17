@@ -16,8 +16,8 @@
       </div>
       <nav id="main">
         <ul>
-          {% for item in get_navigation() %}
-          <li class="nav-{{ item.name }}">
+          {% for item in navigation %}
+          <li class="nav-{{ item.name }}{% if item.active %} active{% endif %}">
             <a href="{{ item.href }}"{% if 'target' in item %}target="{{ item.target }}"{% endif %}>
               <i class="fa fa-fw fa-{{ item.icon }}"></i>
             </a>

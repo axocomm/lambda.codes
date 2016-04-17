@@ -45,16 +45,20 @@ navigation = [
         'icon': 'linkedin',
         'href': 'https://www.linkedin.com/axocomm',
         'target': 'blank'
-    },
+    }
 ]
 
-def get_navigation(current_page=None):
+def get_navigation(base=None):
     """Get navigation items and add `active` class
     to current page.
     """
-    return navigation
+    if not base:
+        return navigation
 
-app.jinja_env.globals.update(get_navigation=get_navigation)
+    return [
+        dict(item, **{'active': item['name'] == base})
+        for item in navigation
+    ]
 
 @app.route('/')
 def index():
@@ -83,7 +87,12 @@ def render_page(page):
     with open(filename) as fh:
         file_content = fh.read()
         content = Markup(markdown.markdown(file_content))
-        return render_template('page.html', content=content)
+        base = page.split('/')[0]
+        return render_template(
+            'page.html',
+            content=content,
+            navigation=get_navigation(base)
+        )
 
 @app.errorhandler(404)
 def render_404(error):
