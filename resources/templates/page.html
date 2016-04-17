@@ -16,36 +16,14 @@
       </div>
       <nav id="main">
         <ul>
-          <li class="nav-about active">
-            <a href="/about">
-              <i class="fa fa-fw fa-info"></i>
+          {% for item in get_navigation() %}
+          <li class="nav-{{ item.name }}">
+            <a href="{{ item.href }}"{% if 'target' in item %}target="{{ item.target }}"{% endif %}>
+              <i class="fa fa-fw fa-{{ item.icon }}"></i>
             </a>
-            <span class="item-title">about</span>
+            <span class="item-title">{{ item.title }}</span>
           </li>
-          <li class="nav-projects">
-            <a href="/projects">
-              <i class="fa fa-fw fa-code"></i>
-            </a>
-            <span class="item-title">projects</span>
-          </li>
-          <li class="nav-github">
-            <a href="https://github.com/axocomm" target="blank">
-              <i class="fa fa-fw fa-github"></i>
-            </a>
-            <span class="item-title">github</span>
-          </li>
-          <li class="nav-bitbucket">
-            <a href="https://bitbucket.org/axocomm" target="blank">
-              <i class="fa fa-fw fa-bitbucket"></i>
-            </a>
-            <span class="item-title">bitbucket</span>
-          </li>
-          <li class="nav-linkedin">
-            <a href="https://www.linkedin.com/in/tmaglione" target="blank">
-              <i class="fa fa-fw fa-linkedin"></i>
-            </a>
-            <span class="item-title">linkedin</span>
-          </li>
+          {% endfor %}
         </ul>
       </nav>
     </header>

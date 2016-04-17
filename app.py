@@ -11,6 +11,51 @@ app = Flask(
 
 app.config['PAGE_DIR'] = 'resources/pages'
 
+# TODO: move this into JSON maybe
+navigation = [
+    {
+        'name': 'about',
+        'title': 'About',
+        'icon': 'info',
+        'href': '/about'
+    },
+    {
+        'name': 'projects',
+        'title': 'Projects',
+        'icon': 'code',
+        'href': '/projects'
+    },
+    {
+        'name': 'github',
+        'title': 'GitHub',
+        'icon': 'github',
+        'href': 'https://github.com/axocomm',
+        'target': 'blank'
+    },
+    {
+        'name': 'bitbucket',
+        'title': 'BitBucket',
+        'icon': 'bitbucket',
+        'href': 'https://bitbucket.org/axocomm',
+        'target': 'blank'
+    },
+    {
+        'name': 'linkedin',
+        'title': 'LinkedIn',
+        'icon': 'linkedin',
+        'href': 'https://www.linkedin.com/axocomm',
+        'target': 'blank'
+    },
+]
+
+def get_navigation(current_page=None):
+    """Get navigation items and add `active` class
+    to current page.
+    """
+    return navigation
+
+app.jinja_env.globals.update(get_navigation=get_navigation)
+
 @app.route('/')
 def index():
     return 'Foo'
