@@ -11,6 +11,55 @@ app = Flask(
 
 app.config['PAGE_DIR'] = 'resources/pages'
 
+# TODO: move this into JSON maybe
+navigation = [
+    {
+        'name': 'about',
+        'title': 'About',
+        'icon': 'info',
+        'href': '/about'
+    },
+    {
+        'name': 'projects',
+        'title': 'Projects',
+        'icon': 'code',
+        'href': '/projects'
+    },
+    {
+        'name': 'github',
+        'title': 'GitHub',
+        'icon': 'github',
+        'href': 'https://github.com/axocomm',
+        'target': 'blank'
+    },
+    {
+        'name': 'bitbucket',
+        'title': 'BitBucket',
+        'icon': 'bitbucket',
+        'href': 'https://bitbucket.org/axocomm',
+        'target': 'blank'
+    },
+    {
+        'name': 'linkedin',
+        'title': 'LinkedIn',
+        'icon': 'linkedin',
+        'href': 'https://www.linkedin.com/axocomm',
+        'target': 'blank'
+    }
+]
+
+def get_navigation(base=None):
+    """Get navigation items and add `active` class
+    to current page.
+    """
+    if not base:
+        return navigation
+
+    return [
+        dict(item, **{'active': item['name'] == base})
+        for item in navigation
+    ]
+
 @app.route('/')
 def index():
     return 'Foo'
@@ -38,7 +87,12 @@ def render_page(page):
     with open(filename) as fh:
         file_content = fh.read()
         content = Markup(markdown.markdown(file_content))
-        return render_template('page.html', content=content)
+        base = page.split('/')[0]
+        return render_template(
+            'page.html',
+            content=content,
+            navigation=get_navigation(base)
+        )
 
 @app.errorhandler(404)
 def render_404(error):
