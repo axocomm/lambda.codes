@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Foo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+  <body class="home">
+    <div id="home-nav-container">
+      <nav id="home-nav">
+        <h1 id="home-title">xyzy</h1>
+        <ul id="home-nav-items">
+          {% for item in navigation %}
+          <li class="home-nav-{{ item.name }}"
+            data-title="{{ item.name }}">
+            <a href="{{ item.href }}"{% if item.target %}
+              target="{{ item.target }}"{% endif %}>
+              <i class="fa fa-fw fa-{{ item.icon }}"></i>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+    {% block content %}{% endblock %}
+  </body>
+</html>
