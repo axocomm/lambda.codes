@@ -6,11 +6,13 @@ var cleanCss = require('gulp-clean-css');
 var del = require('del');
 
 var manifest = {
-  scss: ['resources/src/scss/styles.scss']
+  scss: ['resources/src/scss/styles.scss'],
+  js: ['resources/src/js/home-nav.js']
 };
 
 var dest = {
-  css: 'resources/public/css'
+  css: 'resources/public/css',
+  js: 'resources/public/js'
 };
 
 gulp.task('clean', function () {
@@ -24,10 +26,16 @@ gulp.task('scss', function () {
     .pipe(gulp.dest(dest.css));
 });
 
-gulp.task('build', ['scss']);
+gulp.task('js', function () {
+  return gulp.src(manifest.js)
+    .pipe(gulp.dest(dest.js));
+});
+
+gulp.task('build', ['scss', 'js']);
 
 gulp.task('default', ['build']);
 
 gulp.task('d', ['default'], function () {
-  return gulp.watch(manifest.scss, ['default']);
+  var srcFiles = [].concat.apply(manifest.scss, manifest.js);
+  return gulp.watch(srcFiles, ['default']);
 });

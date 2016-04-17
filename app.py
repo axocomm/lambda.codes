@@ -61,8 +61,11 @@ def get_navigation(base=None):
     ]
 
 @app.route('/')
-def index():
-    return 'Foo'
+def render_home():
+    return render_template(
+        'home.html',
+        navigation=get_navigation()
+    )
 
 @app.route('/favicon.ico')
 def favicon():

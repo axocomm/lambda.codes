@@ -1,34 +1,7 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Foo</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-  </head>
-  <body>
-    <header>
-      <div id="site-logo">
-        <a href="/">
-          <i class="fa fa-fw fa-star-half-o"></i>
-        </a>
-        <span class="site-title">xyzy</span>
-      </div>
-      <nav id="main">
-        <ul>
-          {% for item in navigation %}
-          <li class="nav-{{ item.name }}{% if item.active %} active{% endif %}">
-            <a href="{{ item.href }}"{% if 'target' in item %}target="{{ item.target }}"{% endif %}>
-              <i class="fa fa-fw fa-{{ item.icon }}"></i>
-            </a>
-            <span class="item-title">{{ item.title }}</span>
-          </li>
-          {% endfor %}
-        </ul>
-      </nav>
-    </header>
-    <main id="content">
-      {{ content }}
-    </main>
-  </body>
-</html>
+{% extends "layouts/default.html" %}
+{% block content %}
+<main id="content">
+  {{ content }}
+</main>
+{% endblock %}
+
