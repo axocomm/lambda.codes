@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var cleanCss = require('gulp-clean-css');
 var del = require('del');
 
 var manifest = {
@@ -19,6 +20,7 @@ gulp.task('clean', function () {
 gulp.task('scss', function () {
   return gulp.src(manifest.scss)
     .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCss())
     .pipe(gulp.dest(dest.css));
 });
 
