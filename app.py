@@ -17,7 +17,14 @@ def index():
 @app.route('/<path:page>')
 def render_page(page):
     page_dir = app.config['PAGE_DIR']
-    filename = '%s.md' % os.path.join(page_dir, page)
+    path = os.path.join(page_dir, page)
+
+    if os.path.isdir(path):
+        filename = os.path.join(path, 'index.md')
+    else:
+        filename = path + '.md'
+
+    print('Checking %s' % filename)
 
     if not os.path.isfile(filename):
         abort(404)
