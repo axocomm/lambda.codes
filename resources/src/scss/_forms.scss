@@ -1,0 +1,58 @@
+.btn {
+  padding: 10px 20px;
+  color: #fff !important;
+  background-color: #000;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    color: #fff;
+    background-color: #333;    
+  }
+
+  &.btn-danger {
+    background-color: #933;
+
+    &:hover {
+      background-color: #a04040;
+    }
+  }
+
+  &.btn-ok {
+    background-color: #393;
+
+    &:hover {
+      background-color: #40a040;
+    }
+  }
+}
+
+form {
+  .field {
+    label {
+      min-width: 120px;
+      float: left;
+      padding-bottom: 12px;
+      padding-top: 12px;
+    }
+
+    input[type=text],
+    input[type=password] {
+      font-size: 20px;
+      font-face: monospace;
+      padding-bottom: 6px;
+      padding-top: 6px;      
+    }
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+}
+
+.flash.flash-error {
+  color: #d00;
+}

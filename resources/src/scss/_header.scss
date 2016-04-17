@@ -1,0 +1,49 @@
+header {
+  float: left;
+  position: fixed;
+}
+
+nav#main ul,
+nav#main ul li,
+#home-nav-items,
+#home-nav-items li {
+  list-style-type: none;
+}
+
+nav#main ul li,
+#site-logo {
+  text-transform: lowercase;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+}
+
+nav#main ul li a,
+#site-logo a,
+#home-nav-items li a {
+  font-size: 24px;
+  padding: 10px 5px 12px 10px;
+  text-decoration: none;
+  color: #000;
+  margin-right: 20px;
+}
+
+nav#main ul li span.item-title {
+  display: none;
+}
+
+nav#main ul li:hover a,
+#site-logo a {
+  color: #fff;
+  background-color: #000;
+}
+
+nav#main ul li.active a {
+  border-left: 5px solid #000;
+  padding-left: 5px;
+}
+
+nav#main ul li:hover span.item-title,
+#site-logo .site-title {
+  display: inline;
+}

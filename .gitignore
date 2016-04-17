@@ -10,3 +10,5 @@
 pyvenv.cfg
 .venv
 pip-selfcheck.json
+node_modules/
+resources/public/css/styles.css
