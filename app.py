@@ -96,7 +96,11 @@ def render_page(page):
 
 @app.errorhandler(404)
 def render_404(error):
-    return render_template('error.html', error=error)
+    return render_template(
+        'error.html',
+        error=error,
+        navigation=get_navigation()
+    )
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
