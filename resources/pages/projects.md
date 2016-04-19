@@ -8,8 +8,8 @@ ready-to-use WordPress installation for local development
 
 ### xyzyxyzy.xyz
 
-This site is hosted in a container managed by Proxmox and built using
-[Luminus](http://www.luminusweb.net/) for Clojure.
+This site is a simple Flask application that renders pages from Markdown files. 
+It is running inside a Docker container hosted by CoreOS.
 
 Styles are from scratch but do start with the
 [CSS Reset](http://meyerweb.com/eric/tools/css/reset/). Navigation icons
