@@ -1,6 +1,7 @@
 from flask import Flask, Markup, render_template, \
     abort, send_from_directory
 import markdown
+import os
 import os.path
 
 app = Flask(
@@ -106,4 +107,6 @@ def render_404(error):
     )
 
 if __name__ == '__main__':
+    if 'PAGE_DIR' in os.environ:
+        app.config['PAGE_DIR'] = os.environ['PAGE_DIR']
     app.run(debug=True, host='0.0.0.0')
