@@ -61,6 +61,18 @@ def get_navigation(base=None):
         for item in navigation
     ]
 
+def find_title(content):
+    lines = content.split('\n')
+    matches = [
+        line for line in lines
+        if line.startswith('#')
+    ]
+
+    if not matches:
+        return None
+    else:
+        return matches[0].lstrip('# ')
+
 @app.route('/')
 def render_home():
     return render_template(
@@ -90,12 +102,14 @@ def render_page(page):
 
     with open(filename) as fh:
         file_content = fh.read()
+        title = find_title(file_content)
         content = Markup(markdown.markdown(file_content))
         base = page.split('/')[0]
         return render_template(
             'page.html',
             content=content,
-            navigation=get_navigation(base)
+            navigation=get_navigation(base),
+            title=title
         )
 
 @app.errorhandler(404)
