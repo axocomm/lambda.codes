@@ -24,8 +24,14 @@ namespace :dev do
   end
 end
 
+namespace :prod do
+  task :deploy do
+    puts 'ok'
+  end
+end
+
 namespace :docker do
-  task :build, :tag do |t, args|
+  task :build, [:tag] => 'gulp:build' do |t, args|
     tag = args[:tag] || 'master'
     cmd = "docker build -t #{NAME}:#{tag} ."
     sh cmd
@@ -42,6 +48,10 @@ docker run \
   --name #{NAME} #{NAME}:#{tag}
 EOT
     sh cmd
+  end
+
+  task :stop do
+    sh "docker stop #{NAME}"
   end
 
   task :enter do |t, args|
