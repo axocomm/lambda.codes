@@ -9,7 +9,7 @@ ready-to-use WordPress installation for local development
 ### xyzyxyzy.xyz
 
 This site is a simple Flask application that renders pages from Markdown files. 
-It is running inside a Docker container hosted by CoreOS.
+It is running inside a Docker container hosted by Debian.
 
 Styles are from scratch but do start with the
 [CSS Reset](http://meyerweb.com/eric/tools/css/reset/). Navigation icons
