@@ -14,4 +14,4 @@ build-docker:
 	docker build -t xyzy-min .
 
 run-docker:
-	docker run -it -p 5000:5000 -v $(PAGE_DIR):/pages -d xyzy-min
+	docker run -it -p 5000:5000 -v $(PAGE_DIR):/pages -d --name xyzy-site xyzy-min
