@@ -93,6 +93,19 @@ EOT
   end
 end
 
+task :push_pages do
+  host = $config[:host]
+  user = $config[:user]
+  page_dir = $config[:page_dir]
+
+  cmd = <<-EOT
+rsync -rave ssh \
+  #{Dir.pwd}/resources/pages/ \
+  #{user}@#{host}:#{page_dir}
+EOT
+  sh cmd
+end
+
 namespace :docker do
   task :build, :tag do |t, args|
     tag = args[:tag] || 'master'
