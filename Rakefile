@@ -51,9 +51,9 @@ EOT
     sh cmd
 
     commands = [
-      "cd #{remote_path} && bundle",
-      "cd #{remote_path} && rake docker:build",
-      "cd #{remote_path} && echo rake docker:run"
+      "cd #{remote_path} && bundle install --deployment",
+      "cd #{remote_path} && bundle exec rake docker:build",
+      "cd #{remote_path} && bundle exec rake docker:run"
     ]
 
     Net::SSH.start(host, user, options) do |ssh|
