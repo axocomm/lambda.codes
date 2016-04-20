@@ -1,6 +1,9 @@
+require 'net/ssh'
+
 PAGE_DIR = ENV['PAGE_DIR'] || "#{Dir.pwd}/resources/pages"
 PORT = ENV['PORT'] || 5000
 NAME = 'xyzy-min'
+REPO = 'git@gitlab.com:axocomm/xyzy-min.git'
 
 task :default => 'dev:run'
 
@@ -22,16 +25,46 @@ namespace :dev do
   multitask :run => ['gulp:watch'] do
     sh "PAGE_DIR=#{PAGE_DIR} python -m app"
   end
+
+  task :run_docker => [
+         'gulpd:build',
+         'docker:build',
+         'docker:run'
+       ]
 end
 
-namespace :prod do
-  task :deploy do
-    puts 'ok'
+namespace :staging do
+  task :deploy => 'gulp:build' do
+    host = 'www.dev.xyzyxyzy.xyz'
+    user = 'deploy'
+    remote_path = '/home/deploy/xyzy-min'
+    options = {:verbose => :error}
+
+    cmd = <<-EOT
+rsync -rave ssh \
+  --exclude='.git/' \
+  --exclude='venv/' \
+  --exclude='node_modules/' \
+  . #{user}@#{host}:#{remote_path}
+EOT
+
+    sh cmd
+
+    commands = [
+      "cd #{remote_path} && bundle",
+      "cd #{remote_path} && rake docker:build",
+      "cd #{remote_path} && echo rake docker:run"
+    ]
+
+    Net::SSH.start(host, user, options) do |ssh|
+      commands.each { |c| puts ssh.exec!(c) }
+      ssh.loop
+    end
   end
 end
 
 namespace :docker do
-  task :build, [:tag] => 'gulp:build' do |t, args|
+  task :build, :tag do |t, args|
     tag = args[:tag] || 'master'
     cmd = "docker build -t #{NAME}:#{tag} ."
     sh cmd

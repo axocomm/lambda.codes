@@ -1,12 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    net-ssh (2.9.4)
     rake (11.1.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  net-ssh
   rake
 
 BUNDLED WITH
