@@ -17,3 +17,5 @@ resources/public/css/
 resources/public/js/
 
 .tern-port
+
+*.pyc
