@@ -4,6 +4,13 @@ PAGE_DIR = ENV['PAGE_DIR'] || "#{Dir.pwd}/resources/pages"
 PORT = ENV['PORT'] || 5000
 NAME = 'xyzy-min'
 REPO = 'git@gitlab.com:axocomm/xyzy-min.git'
+CONFIG = {
+  :staging => {
+    :host        => 'www.dev.xyzyxyzy.xyz',
+    :user        => 'deploy',
+    :remote_path => '/home/deploy/xyzy-min'
+  }
+}
 
 task :default => 'dev:run'
 
@@ -27,20 +34,30 @@ namespace :dev do
   end
 
   task :run_docker => [
-         'gulpd:build',
+         'gulp:build',
          'docker:build',
          'docker:run'
        ]
 end
 
-namespace :staging do
-  task :deploy => 'gulp:build' do
-    host = 'www.dev.xyzyxyzy.xyz'
-    user = 'deploy'
-    remote_path = '/home/deploy/xyzy-min'
-    options = {:verbose => :error}
+task :deploy, [:environment] => 'gulp:build' do |t, args|
+  if args.include?(:environment)
+    environment = args[:environment].to_sym
+  else
+    environment = :staging
+  end
 
-    cmd = <<-EOT
+  unless CONFIG.include?(environment)
+    raise "Unknown environment #{environment.to_s}"
+  end
+
+  config = CONFIG[environment]
+  host = config[:host]
+  user = config[:user]
+  remote_path = config[:remote_path]
+  options = {:verbose => :error}
+
+  cmd = <<-EOT
 rsync -rave ssh \
   --exclude='.git/' \
   --exclude='venv/' \
@@ -48,20 +65,19 @@ rsync -rave ssh \
   . #{user}@#{host}:#{remote_path}
 EOT
 
-    sh cmd
+  sh cmd
 
-    commands = [
-      "cd #{remote_path} && bundle install --deployment",
-      "cd #{remote_path} && bundle exec rake docker:build",
-      "cd #{remote_path} && bundle exec rake docker:stop",
-      "cd #{remote_path} && bundle exec rake docker:rm",
-      "cd #{remote_path} && bundle exec rake docker:run"
-    ]
+  commands = [
+    "cd #{remote_path} && bundle install --deployment",
+    "cd #{remote_path} && bundle exec rake docker:build",
+    "cd #{remote_path} && bundle exec rake docker:stop",
+    "cd #{remote_path} && bundle exec rake docker:rm",
+    "cd #{remote_path} && bundle exec rake docker:run"
+  ]
 
-    Net::SSH.start(host, user, options) do |ssh|
-      commands.each { |c| puts ssh.exec!(c) }
-      ssh.loop
-    end
+  Net::SSH.start(host, user, options) do |ssh|
+    commands.each { |c| puts ssh.exec!(c) }
+    ssh.loop
   end
 end
 
