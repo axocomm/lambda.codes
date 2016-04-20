@@ -53,6 +53,8 @@ EOT
     commands = [
       "cd #{remote_path} && bundle install --deployment",
       "cd #{remote_path} && bundle exec rake docker:build",
+      "cd #{remote_path} && bundle exec rake docker:stop",
+      "cd #{remote_path} && bundle exec rake docker:rm",
       "cd #{remote_path} && bundle exec rake docker:run"
     ]
 
@@ -85,6 +87,13 @@ EOT
 
   task :stop do
     sh "docker stop #{NAME}"
+  end
+
+  task :restart => [:stop, :run]
+
+  task :rm, :tag do |t, args| 
+    tag = args[:tag] || 'master'
+    sh "docker rm #{NAME}"
   end
 
   task :enter do |t, args|
