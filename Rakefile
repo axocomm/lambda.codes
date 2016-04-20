@@ -13,12 +13,15 @@ CONFIG = {
     :name        => "#{IMAGE_NAME}-staging"
   },
   :prod => {
-    :host        => 'www.dev.xyzyxyzy.xyz',
+    :host        => 'xyzyxyzy.xyz',
     :user        => 'deploy',
     :remote_path => '/home/deploy/xyzy-min',
     :page_dir    => '/home/deploy/xyzy-min/resources/pages',
     :listen_port => 3000,
     :name        => "#{IMAGE_NAME}"
+  },
+  :development => {
+    :page_dir => "#{Dir.pwd}/resources/pages"
   }
 }
 
@@ -51,7 +54,8 @@ end
 
 namespace :dev do
   multitask :run => ['gulp:watch'] do
-    sh "PAGE_DIR=#{$config[:page_dir]} python -m app"
+    config = get_config :development
+    sh "PAGE_DIR=#{config[:page_dir]} python -m app"
   end
 
   task :run_docker => [
