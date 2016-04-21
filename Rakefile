@@ -7,6 +7,7 @@ CONFIG = {
   :staging => {
     :host        => 'www.dev.xyzyxyzy.xyz',
     :user        => 'deploy',
+    :ssh_port    => 2222,
     :remote_path => '/home/deploy/xyzy-min-staging',
     :page_dir    => '/home/deploy/xyzy-min-staging/resources/pages',
     :listen_port => 5000,
@@ -15,6 +16,7 @@ CONFIG = {
   :prod => {
     :host        => 'xyzyxyzy.xyz',
     :user        => 'deploy',
+    :ssh_port    => 2222,
     :remote_path => '/home/deploy/xyzy-min',
     :page_dir    => '/home/deploy/xyzy-min/resources/pages',
     :listen_port => 3000,
@@ -69,10 +71,13 @@ task :deploy => 'gulp:build' do
   host = $config[:host]
   user = $config[:user]
   remote_path = $config[:remote_path]
-  options = {:verbose => :error}
+  options = {
+    :verbose => :error,
+    :port    => $config[:ssh_port]
+  }
 
   cmd = <<-EOT
-rsync -rave ssh \
+rsync -rave 'ssh -p#{$config[:ssh_port]}' \
   --exclude='.git/' \
   --exclude='venv/' \
   --exclude='node_modules/' \
