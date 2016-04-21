@@ -118,7 +118,7 @@ def render_404(error):
         'error.html',
         error=error,
         navigation=get_navigation()
-    )
+    ), 404
 
 if __name__ == '__main__':
     if 'PAGE_DIR' in os.environ:
