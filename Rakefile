@@ -41,25 +41,30 @@ $config = get_config environment
 task :default => 'dev:run'
 
 namespace :gulp do
+  desc 'Build resources'
   task :build do
     sh 'gulp build'
   end
 
+  desc 'Run gulp d'
   task :watch do
     sh 'gulp d >/tmp/gulp-d.log 2>&1 &'
   end
 
+  desc 'Try to kill Gulp'
   task :kill do
     sh 'killall gulp'
   end
 end
 
 namespace :dev do
+  desc 'Start local Flask'
   multitask :run => ['gulp:watch'] do
     config = get_config :development
     sh "PAGE_DIR=#{config[:page_dir]} python -m app"
   end
 
+  desc 'Build and run local Docker container'
   task :run_docker => [
          'gulp:build',
          'docker:build',
@@ -67,6 +72,7 @@ namespace :dev do
        ]
 end
 
+desc 'Deploy to remote Docker container'
 task :deploy => 'gulp:build' do
   host = $config[:host]
   user = $config[:user]
@@ -102,13 +108,14 @@ EOT
   end
 end
 
+desc 'Synchronize current pages to remote'
 task :push_pages do
   host = $config[:host]
   user = $config[:user]
   page_dir = $config[:page_dir]
 
   cmd = <<-EOT
-rsync -rave ssh \
+rsync -rave 'ssh -p#{$config[:ssh_port]}' \
   #{Dir.pwd}/resources/pages/ \
   #{user}@#{host}:#{page_dir}
 EOT
@@ -116,12 +123,14 @@ EOT
 end
 
 namespace :docker do
+  desc 'Build image'
   task :build, :tag do |t, args|
     tag = args[:tag] || 'master'
     cmd = "docker build -t #{IMAGE_NAME}:#{tag} ."
     sh cmd
   end
 
+  desc 'Run container'
   task :run, :tag do |t, args|
     tag = args[:tag] || 'master'
     listen_port = $config[:listen_port]
@@ -138,17 +147,21 @@ EOT
     sh cmd
   end
 
+  desc 'Stop container'
   task :stop do
     sh "docker stop #{$config[:name]}"
   end
 
+  desc 'Restart container'
   task :restart => [:stop, :run]
 
+  desc 'Remove container'
   task :rm, :tag do |t, args| 
     tag = args[:tag] || 'master'
     sh "docker rm #{$config[:name]}"
   end
 
+  desc 'Run Bash in container'
   task :enter do |t, args|
     sh "docker exec -it #{$config[:name]} bash"
   end
