@@ -148,7 +148,7 @@ devices on the walls, their current health state, and various details on hover
 gathered from multiple data sources.
 
 Python, PHP, and Hack were primary languages in use in this position. Mercurial
-was used as source control for most of the repositories I worked on Phabricator
+was used as source control for most of the repositories I worked on and Phabricator
 was used for source code exploration, code reviews, and much more.
 
 ### Vimbly

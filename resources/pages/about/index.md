@@ -1,12 +1,10 @@
 # About
 
-Hello. My name is Trevor, and I am a software engineer and student
-focusing on web development, DevOps, and some Unix system
-administration. I grew up at the Jersey Shore and currently reside in
-the Walnut Hill section of Philadelphia where I attend Drexel
-University part time pursuing a B.S. in Software Engineering.
+Hello. My name is Trevor, and I am a software engineer focusing on web
+development, DevOps, and some Unix system administration. I grew up at the
+Jersey Shore and currently reside in the Walnut Hill section of Philadelphia.
 
-At the moment I am a Clojure software engineer at [Relay
+At the moment I am a full stack Clojure developer at [Relay
 Network](http://www.relaynetwork.com/) and lead developer at ProTech
 Internet Group.
 
