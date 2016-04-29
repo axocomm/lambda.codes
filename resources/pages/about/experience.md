@@ -3,6 +3,7 @@
 ## Skills
 
 ### Languages
+
 <div class="row" id="language-list">
 <div class="one-half first">
 <ul>
@@ -28,6 +29,7 @@
 </div>
 
 ### Tools
+
 <div class="row" id="language-list">
 <div class="one-half first">
 <ul>
@@ -52,6 +54,7 @@
 </div>
 
 ### Administration and Management
+
 <div class="row" id="language-list">
 <div class="one-half first">
 <ul>
@@ -73,6 +76,7 @@
 </div>
 
 ### Frameworks
+
 + CakePHP
 + Django
 + Laravel
