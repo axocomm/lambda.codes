@@ -44,7 +44,7 @@ navigation = [
         'name': 'linkedin',
         'title': 'LinkedIn',
         'icon': 'linkedin',
-        'href': 'https://www.linkedin.com/axocomm',
+        'href': 'https://www.linkedin.com/in/tmaglione',
         'target': 'blank'
     }
 ]
