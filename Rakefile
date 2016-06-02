@@ -122,6 +122,20 @@ EOT
   sh cmd
 end
 
+desc 'Synchronize current pages from remote'
+task :pull_pages do
+  host = $config[:host]
+  user = $config[:user]
+  page_dir = $config[:page_dir]
+
+  cmd = <<-EOT
+rsync -rave 'ssh -p#{$config[:ssh_port]}' \
+  #{user}@#{host}:#{page_dir} \
+  #{Dir.pwd}/resources/pages/
+EOT
+  sh cmd
+end
+
 namespace :docker do
   desc 'Build image'
   task :build, :tag do |t, args|
