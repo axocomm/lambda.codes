@@ -6,6 +6,12 @@
 A Vagrant setup that aims to provide quick and easy access to a LEMP stack and
 ready-to-use WordPress installation for local development
 
+### wp-docker-dev
+
+[GitHub](https://github.com/axocomm/wp-docker-dev)<br>
+A simple Docker-based WordPress setup that provides an easy-to-use environment for
+working on multiple local development installations
+
 ### xyzyxyzy.xyz
 
 This site is a simple Flask application that renders pages from Markdown files. 
