@@ -48,7 +48,7 @@ namespace :gulp do
 
   desc 'Run gulp d'
   task :watch do
-    sh 'gulp d >/tmp/gulp-d.log 2>&1 &'
+    sh 'gulp d'
   end
 
   desc 'Try to kill Gulp'
@@ -59,7 +59,7 @@ end
 
 namespace :dev do
   desc 'Start local Flask'
-  multitask :run => ['gulp:watch'] do
+  task :run do
     config = get_config :development
     sh "PAGE_DIR=#{config[:page_dir]} python -m app"
   end
@@ -170,7 +170,7 @@ EOT
   task :restart => [:stop, :run]
 
   desc 'Remove container'
-  task :rm, :tag do |t, args| 
+  task :rm, :tag do |t, args|
     tag = args[:tag] || 'master'
     sh "docker rm #{$config[:name]}"
   end
