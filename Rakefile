@@ -130,7 +130,7 @@ task :pull_pages do
 
   cmd = <<-EOT
 rsync -rave 'ssh -p#{$config[:ssh_port]}' \
-  #{user}@#{host}:#{page_dir} \
+  #{user}@#{host}:#{page_dir}/ \
   #{Dir.pwd}/resources/pages/
 EOT
   sh cmd
