@@ -78,10 +78,8 @@
 ### Frameworks
 
 + CakePHP
-+ Django
++ Ruby on Rails
 + Laravel
-+ Sinatra
-+ Flask
 + WordPress API
 
 ## Education
@@ -92,9 +90,8 @@ B.S. Software Engineering, Drexel University (2011-present, currently on hold)
 
 ### Relay Network (present)
 
-I have recently begun a my first full time software engineer position
-at Relay Network. I will be doing full stack development, particularly
-in Clojure.
+I am currently a full stack developer at Relay Network in Radnor, PA working
+primarily with Clojure.
 
 ### ProTech Internet Group (present)
 
@@ -126,7 +123,7 @@ Badgers, who deal almost exclusively with fixing defects.
 
 ### Facebook
 
-Over the summer, I was a Production Engineering intern at Facebook's
+In the summer of 2015, I was a Production Engineering intern at Facebook's
 headquarters in Menlo Park, CA. Here, I worked on the PE Mobile team on a few
 projects.
 
@@ -137,7 +134,7 @@ custom ROM, and making necessary configuration changes for remote access and
 management. By the summer's end this tool supported Nexus 4 and 5 (and
 theoretically any other reasonably open, i.e. not too locked down, device) and
 was used to provision a bunch of phones at the office and recently a bunch more
-*remotely* in the Prineville, OR datacentre.
+*remotely* in the Prineville, OR datacenter.
 
 The second project was a battery monitoring script for Android and iOS devices
 in the device labs. It gathered battery voltage information and submitted
