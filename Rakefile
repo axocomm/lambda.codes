@@ -100,7 +100,7 @@ EOT
     "bundle exec rake docker:stop",
     "bundle exec rake docker:rm",
     "bundle exec rake docker:run"
-  ].map { |cmd| "#{prefix} #{cmd}" }
+  ].map { |c| "#{prefix} #{c}" }
 
   Net::SSH.start(host, user, options) do |ssh|
     commands.each { |c| puts ssh.exec!(c) }
