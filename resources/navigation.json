@@ -1,0 +1,28 @@
+[
+  {
+    "title": "About",
+    "href": "/about",
+    "name": "about",
+    "icon": "info"
+  },
+  {
+    "title": "Projects",
+    "href": "/projects",
+    "name": "projects",
+    "icon": "code"
+  },
+  {
+    "title": "GitHub",
+    "href": "https://github.com/axocomm",
+    "target": "blank",
+    "name": "github",
+    "icon": "github"
+  },
+  {
+    "title": "LinkedIn",
+    "href": "https://www.linkedin.com/in/tmaglione",
+    "target": "blank",
+    "name": "linkedin",
+    "icon": "linkedin"
+  }
+]

@@ -3,6 +3,7 @@ from flask import Flask, Markup, render_template, \
 import markdown
 import os
 import os.path
+import json
 
 app = Flask(
     __name__,
@@ -12,47 +13,18 @@ app = Flask(
 
 app.config['PAGE_DIR'] = 'resources/pages'
 
-# TODO: move this into JSON maybe
-navigation = [
-    {
-        'name': 'about',
-        'title': 'About',
-        'icon': 'info',
-        'href': '/about'
-    },
-    {
-        'name': 'projects',
-        'title': 'Projects',
-        'icon': 'code',
-        'href': '/projects'
-    },
-    {
-        'name': 'github',
-        'title': 'GitHub',
-        'icon': 'github',
-        'href': 'https://github.com/axocomm',
-        'target': 'blank'
-    },
-    {
-        'name': 'bitbucket',
-        'title': 'BitBucket',
-        'icon': 'bitbucket',
-        'href': 'https://bitbucket.org/axocomm',
-        'target': 'blank'
-    },
-    {
-        'name': 'linkedin',
-        'title': 'LinkedIn',
-        'icon': 'linkedin',
-        'href': 'https://www.linkedin.com/in/tmaglione',
-        'target': 'blank'
-    }
-]
+NAVIGATION = 'resources/navigation.json'
+
+def load_navigation(filename):
+    with open(filename) as fh:
+        return json.loads(fh.read())
+    return []
 
 def get_navigation(base=None):
     """Get navigation items and add `active` class
     to current page.
     """
+    navigation = load_navigation(NAVIGATION)
     if not base:
         return navigation
 
@@ -123,4 +95,5 @@ def render_404(error):
 if __name__ == '__main__':
     if 'PAGE_DIR' in os.environ:
         app.config['PAGE_DIR'] = os.environ['PAGE_DIR']
+    navigation = load_navigation('resources/navigation.json')
     app.run(debug=True, host='0.0.0.0')
