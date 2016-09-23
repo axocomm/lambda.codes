@@ -6,7 +6,7 @@ var cleanCss = require('gulp-clean-css');
 var del = require('del');
 
 var manifest = {
-  scss: ['resources/src/scss/styles.scss'],
+  scss: ['resources/src/scss/**/*.scss'],
   js: ['resources/src/js/home-nav.js']
 };
 
