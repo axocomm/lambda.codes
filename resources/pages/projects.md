@@ -28,7 +28,8 @@ A small command line utility for working with multiple Vagrant VMs
 
 ### racknews
 
-[GitHub](https://github.com/axocomm/racknews)<br>
-A simple RackTables reporting tool (needs an update)
+[GitHub](https://github.com/axocomm/racknews2)<br>
+A simple RackTables API and reporting tool
+(WIP rewrite of [RackNews](https://github.com/axocomm/racknews))
 
 More to come soon (hopefully).
