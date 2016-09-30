@@ -28,10 +28,7 @@ CONFIG = {
 }
 
 def get_config(environment)
-  if not CONFIG.include?(environment)
-    raise "Invalid environment #{environment}"
-  end
-
+  fail "Invalid environment #{environment}" unless CONFIG.include?(environment)
   CONFIG[environment]
 end
 
@@ -83,12 +80,12 @@ task :deploy => 'gulp:build' do
   }
 
   cmd = <<-EOT
-rsync -rave 'ssh -p#{$config[:ssh_port]}' \
-  --exclude='.git/' \
-  --exclude='venv/' \
-  --exclude='node_modules/' \
-  . #{user}@#{host}:#{remote_path}
-EOT
+    rsync -rave 'ssh -p#{$config[:ssh_port]}' \
+      --exclude='.git/' \
+      --exclude='venv/' \
+      --exclude='node_modules/' \
+      . #{user}@#{host}:#{remote_path}
+  EOT
 
   sh cmd
 
@@ -115,10 +112,10 @@ task :push_pages do
   page_dir = $config[:page_dir]
 
   cmd = <<-EOT
-rsync -rave 'ssh -p#{$config[:ssh_port]}' \
-  #{Dir.pwd}/resources/pages/ \
-  #{user}@#{host}:#{page_dir}
-EOT
+    rsync -rave 'ssh -p#{$config[:ssh_port]}' \
+      #{Dir.pwd}/resources/pages/ \
+      #{user}@#{host}:#{page_dir}
+  EOT
   sh cmd
 end
 
@@ -129,10 +126,10 @@ task :pull_pages do
   page_dir = $config[:page_dir]
 
   cmd = <<-EOT
-rsync -rave 'ssh -p#{$config[:ssh_port]}' \
-  #{user}@#{host}:#{page_dir}/ \
-  #{Dir.pwd}/resources/pages/
-EOT
+    rsync -rave 'ssh -p#{$config[:ssh_port]}' \
+      #{user}@#{host}:#{page_dir}/ \
+      #{Dir.pwd}/resources/pages/
+  EOT
   sh cmd
 end
 
@@ -151,13 +148,13 @@ namespace :docker do
     name = $config[:name]
     page_dir = $config[:page_dir]
     cmd = <<-EOT
-docker run \
-  -it \
-  -p #{listen_port}:#{PORT} \
-  -v #{page_dir}:/pages \
-  -d \
-  --name #{name} #{IMAGE_NAME}:#{tag}
-EOT
+      docker run \
+        -it \
+        -p #{listen_port}:#{PORT} \
+        -v #{page_dir}:/pages \
+        -d \
+        --name #{name} #{IMAGE_NAME}:#{tag}
+    EOT
     sh cmd
   end
 
@@ -171,7 +168,6 @@ EOT
 
   desc 'Remove container'
   task :rm, :tag do |t, args|
-    tag = args[:tag] || 'master'
     sh "docker rm #{$config[:name]}"
   end
 
