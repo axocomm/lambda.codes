@@ -1,41 +1,42 @@
 require 'net/ssh'
+require 'yaml'
 
 PORT = ENV['PORT'] || 5000
 IMAGE_NAME = 'xyzy-min'
 REPO = 'git@gitlab.com:axocomm/xyzy-min.git'
-CONFIG = {
-  :staging => {
-    :host        => 'www.dev.xyzyxyzy.xyz',
-    :user        => 'deploy',
-    :ssh_port    => 2222,
-    :remote_path => '/home/deploy/xyzy-min-staging',
-    :page_dir    => '/home/deploy/xyzy-min-staging/resources/pages',
-    :listen_port => 5000,
-    :name        => "#{IMAGE_NAME}-staging"
-  },
-  :prod => {
-    :host        => 'xyzyxyzy.xyz',
-    :user        => 'deploy',
-    :ssh_port    => 2222,
-    :remote_path => '/home/deploy/xyzy-min',
-    :page_dir    => '/home/deploy/xyzy-min/resources/pages',
-    :listen_port => 3000,
-    :name        => "#{IMAGE_NAME}"
-  },
-  :development => {
-    :page_dir => "#{Dir.pwd}/resources/pages"
-  }
-}
+CONFIG = 'resources/config.yml'
+
+class Hash
+  def symbolize
+    self.inject({}) do |acc, (k, v)|
+      vv = v.is_a?(Hash) ? v.symbolize : v
+      kk = k.to_sym
+      acc[kk] = vv
+      acc
+    end
+  end
+end
 
 def get_config(environment)
-  fail "Invalid environment #{environment}" unless CONFIG.include?(environment)
-  CONFIG[environment]
+  file = "#{Dir.pwd}/#{CONFIG}"
+  fail "#{file} doesn't exist" unless File.exists?(file)
+  File.open(file) do |fh|
+    conf = YAML.load(fh.read).symbolize
+    dc = conf[:deploy] or fail "Missing 'deploy' in configuration"
+
+    fail "Invalid environment #{environment}" unless dc.include?(environment)
+    dc[environment]
+  end
 end
 
 environment = (ENV['ENVIRONMENT'] || 'staging').to_sym
-$config = get_config environment
+$config = get_config(environment) or fail "Could not get configuration"
 
 task :default => 'dev:run'
+
+task :dump do
+  puts $config.inspect
+end
 
 namespace :gulp do
   desc 'Build resources'

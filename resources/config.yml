@@ -1,0 +1,20 @@
+---
+deploy:
+  staging:
+    host: www.dev.xyzyxyzy.xyz
+    user: deploy
+    ssh_port: 2222
+    remote_path: "/home/deploy/xyzy-min-staging"
+    page_dir: "/home/deploy/xyzy-min-staging/resources/pages"
+    listen_port: 5000
+    name: xyzy-min-staging
+  prod:
+    host: xyzyxyzy.xyz
+    user: deploy
+    ssh_port: 2222
+    remote_path: "/home/deploy/xyzy-min"
+    page_dir: "/home/deploy/xyzy-min/resources/pages"
+    listen_port: 3000
+    name: xyzy-min
+  development:
+    page_dir: "/home/baron/projects/xyzy-min/resources/pages"
