@@ -8,7 +8,7 @@
 <div class="one-half first">
 <ul>
 <li>PHP/Hack</li>
-<li>Clojure</li>
+<li>Clojure/ClojureScript</li>
 <li>Python</li>
 <li>Ruby</li>
 <li>Bash</li>
@@ -60,13 +60,14 @@
 <ul>
 <li>Nginx</li>
 <li>Apache</li>
-<li>RackTables</li>
 <li>Puppet</li>
 <li>Chef</li>
+<li>Ansible</li>
 </ul>
 </div>
 <div class="one-half">
 <ul>
+<li>RackTables</li>
 <li>Nagios</li>
 <li>Proxmox</li>
 <li>SevOne NMS</li>
@@ -90,8 +91,20 @@ B.S. Software Engineering, Drexel University (2011-present, currently on hold)
 
 ### Relay Network (present)
 
-I am currently a full stack developer at Relay Network in Radnor, PA working
-primarily with Clojure.
+I am currently a full stack developer at Relay Network in Radnor, PA
+working primarily with Clojure. Here, I develop features for multiple
+backend services, work with huge amounts of data, diagnose and fix
+issues of all kinds, and more.
+
+The list of projects is already quite long, but recently I have been involved
+with an overhaul of the internal file processing system for customer data
+management and messaging, a few brand new APIs, and 2-token IVR for member
+onboarding.
+
+Backend services are all written in Clojure, frontends for portals and the
+actual Relay application use Backbone.js, Ruby is used for testing (RSpec) and
+automation/tasks (Rake), and we are moving to Ansible for service deployment.
+Infrastructure is all hosted in AWS.
 
 ### ProTech Internet Group (present)
 
@@ -109,7 +122,7 @@ Google search results that was even featured on
 ### SevOne
 
 SevOne began as my second co-op with Drexel and continued part time through the
-fall and winter before leaving for Vimbly.
+fall and winter before leaving for Vimbly and resumed briefly for Fall 2015.
 
 For the first year, I worked on the Dragon Slayers investigating escalated
 support tickets and identifying and fixing defects. I primarily took on tasks
@@ -154,7 +167,7 @@ was used for source code exploration, code reviews, and much more.
 
 ### Vimbly
 
-Last spring, I worked for New York City startup Vimbly as a web
+For spring 2015, I worked for New York City startup Vimbly as a web
 developer intern. Responsibilities here started day one with beginning
 split testing with [Optimizely](https://www.optimizely.com/) and
 cleanly integrating these tests into the Vimbly website. This soon
