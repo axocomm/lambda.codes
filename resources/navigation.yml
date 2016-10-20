@@ -1,0 +1,19 @@
+---
+- href: /about
+  icon: info
+  name: about
+  title: About
+- href: /projects
+  icon: code
+  name: projects
+  title: Projects
+- href: https://github.com/axocomm
+  icon: github
+  name: github
+  target: blank
+  title: GitHub
+- href: https://www.linkedin.com/in/tmaglione
+  icon: linkedin
+  name: linkedin
+  target: blank
+  title: LinkedIn

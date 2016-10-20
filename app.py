@@ -3,7 +3,7 @@ from flask import Flask, Markup, render_template, \
 import markdown
 import os
 import os.path
-import json
+import yaml
 
 app = Flask(
     __name__,
@@ -13,11 +13,11 @@ app = Flask(
 
 app.config['PAGE_DIR'] = 'resources/pages'
 
-NAVIGATION = 'resources/navigation.json'
+NAVIGATION = 'resources/navigation.yml'
 
 def load_navigation(filename):
     with open(filename) as fh:
-        return json.loads(fh.read())
+        return yaml.load(fh.read())
     return []
 
 def get_navigation(base=None):
@@ -95,5 +95,5 @@ def render_404(error):
 if __name__ == '__main__':
     if 'PAGE_DIR' in os.environ:
         app.config['PAGE_DIR'] = os.environ['PAGE_DIR']
-    navigation = load_navigation('resources/navigation.json')
+    navigation = load_navigation('resources/navigation.yml')
     app.run(debug=True, host='0.0.0.0')
