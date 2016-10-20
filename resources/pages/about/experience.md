@@ -96,10 +96,12 @@ working primarily with Clojure. Here, I develop features for multiple
 backend services, work with huge amounts of data, diagnose and fix
 issues of all kinds, and more.
 
-The list of projects is already quite long, but recently I have been involved
-with an overhaul of the internal file processing system for customer data
-management and messaging, a few brand new APIs, and 2-token IVR for member
-onboarding.
+The list of projects is already quite long, but recently I have been
+involved with an overhaul of the internal file processing system for
+customer data management and messaging, a few brand new APIs, and
+2-token IVR for member onboarding. I am also in the process of
+evaluating and moving some tests over
+to [Midje](https://github.com/marick/Midje) to eventually replace RSpec.
 
 Backend services are all written in Clojure, frontends for portals and the
 actual Relay application use Backbone.js, Ruby is used for testing (RSpec) and
