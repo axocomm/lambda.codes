@@ -1,5 +1,6 @@
 body {
   font-family: $sans-font;
+  color: #333;
 }
 
 p {
@@ -8,8 +9,6 @@ p {
 }
 
 a {
-  color: #000;
-
   &:hover,
   &:active,
   &:visited {
@@ -41,13 +40,13 @@ table {
 
   thead {
     border-bottom: 3px solid #000;
-    font-weight: bold;  
+    font-weight: bold;
   }
 
   tr {
     td,
     th {
-      padding: 20px 20px 20px 0px;      
+      padding: 20px 20px 20px 0px;
     }
   }
 }
@@ -68,7 +67,7 @@ main#content {
 
   img {
     max-width: 100%;
-    text-align: center;    
+    text-align: center;
   }
 }
 
