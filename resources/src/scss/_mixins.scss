@@ -1,4 +1,4 @@
-@mixin text-underline-crop($background, $selection-background) {
+@mixin text-underline-crop($background) {
   text-shadow: .03em 0 $background,
                -.03em 0 $background,
                0 .03em $background,
@@ -11,22 +11,6 @@
                -.12em 0 $background,
                .15em 0 $background,
                -.15em 0 $background;
-
-  &::selection {
-    text-shadow: .03em 0 $selection-background,
-                 -.03em 0 $selection-background,
-                 0 .03em $selection-background,
-                 0 -.03em $selection-background,
-                 .06em 0 $selection-background,
-                 -.06em 0 $selection-background,
-                 .09em 0 $selection-background,
-                 -.09em 0 $selection-background,
-                 .12em 0 $selection-background,
-                 -.12em 0 $selection-background,
-                 .15em 0 $selection-background,
-                 -.15em 0 $selection-background;
-    background-color: $selection-background;
-  }
 }
 
 @mixin text-background($bg-color, $text-color) {
@@ -37,8 +21,16 @@
 }
 
 @mixin link-underline($background, $text, $selection) {
-  @include text-underline-crop($background, $selection);
+  @include text-underline-crop($background);
   @include text-background($background, $text);
+
+  &::selection {
+    @include text-underline-crop($selection);
+  }
+
+  &::-moz-selection {
+    @include text-underline-crop($selection);
+  }
 
   color: $text;
   text-decoration: none;
