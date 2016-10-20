@@ -3,17 +3,21 @@ body {
   color: #333;
 }
 
+::selection {
+  background-color: $selection-bg;
+}
+
+::-moz-selection {
+  background-color: $selection-bg;
+}
+
 p {
   line-height: 1.7;
   margin-bottom: 20px;
 }
 
 a {
-  &:hover,
-  &:active,
-  &:visited {
-    color: #333;
-  }
+  @include link-underline(#fff, $body-color, $selection-bg);
 }
 
 code,

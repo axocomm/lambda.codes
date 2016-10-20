@@ -1,0 +1,57 @@
+@mixin text-underline-crop($background, $selection-background) {
+  text-shadow: .03em 0 $background,
+               -.03em 0 $background,
+               0 .03em $background,
+               0 -.03em $background,
+               .06em 0 $background,
+               -.06em 0 $background,
+               .09em 0 $background,
+               -.09em 0 $background,
+               .12em 0 $background,
+               -.12em 0 $background,
+               .15em 0 $background,
+               -.15em 0 $background;
+
+  &::selection {
+    text-shadow: .03em 0 $selection-background,
+                 -.03em 0 $selection-background,
+                 0 .03em $selection-background,
+                 0 -.03em $selection-background,
+                 .06em 0 $selection-background,
+                 -.06em 0 $selection-background,
+                 .09em 0 $selection-background,
+                 -.09em 0 $selection-background,
+                 .12em 0 $selection-background,
+                 -.12em 0 $selection-background,
+                 .15em 0 $selection-background,
+                 -.15em 0 $selection-background;
+    background-color: $selection-background;
+  }
+}
+
+@mixin text-background($bg-color, $text-color) {
+  background-image: linear-gradient($text-color, $text-color);
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  background-position: 0% 95%;
+}
+
+@mixin link-underline($background, $text, $selection) {
+  @include text-underline-crop($background, $selection);
+  @include text-background($background, $text);
+
+  color: $text;
+  text-decoration: none;
+
+  *,
+  *:after,
+  &:after,
+  *:before,
+  &:before {
+    text-shadow: none;
+  }
+
+  &:visited {
+    color: $text;
+  }
+}
