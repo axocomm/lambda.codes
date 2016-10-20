@@ -84,6 +84,7 @@ task :deploy => 'gulp:build' do
     rsync -rave 'ssh -p#{$config[:ssh_port]}' \
       --exclude='.git/' \
       --exclude='venv/' \
+      --exclude='__pycache__/' \
       --exclude='node_modules/' \
       . #{user}@#{host}:#{remote_path}
   EOT
