@@ -18,6 +18,9 @@ p {
 
 a {
   @include link-underline(#fff, $body-color, $selection-bg);
+  &:hover {
+    color: lighten($body-color, 30%);
+  }
 }
 
 code,
