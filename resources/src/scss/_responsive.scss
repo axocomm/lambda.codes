@@ -71,13 +71,44 @@
 }
 
 @media screen and (max-width: 540px) {
-  #home-nav-items li a {
-    font-size: 2.5em;
+  #home-nav-container {
+    padding: .5em;
   }
-}
 
-@media screen and (max-width: 480px) {
-  #home-nav-items li a {
-    font-size: 1.5em;
+  #home-nav-items,
+  #home-title {
+    text-align: left;
+  }
+
+  #home-title {
+    font-size: 2.4em;
+    padding-left: .2em;
+    margin-bottom: 0;
+  }
+
+  #home-nav-items {
+    li {
+      display: block;
+      margin: 0;
+
+      a {
+        font-size: 2.5em;
+        width: 100%;
+        height: 1.5em;
+        position: relative;
+
+        > * {
+          float: left;
+          position: absolute;
+          bottom: 0;
+        }
+
+        .home-nav-label {
+          display: block;
+          left: 2.5em;
+          font-size: .6em;
+        }
+      }
+    }
   }
 }

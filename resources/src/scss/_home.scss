@@ -30,6 +30,10 @@ body.home {
       padding: 0;
       font-size: 48px;
       display: inline-block;
+
+      .home-nav-label {
+        display: none;
+      }
     }
   }
 }

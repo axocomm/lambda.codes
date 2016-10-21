@@ -15,10 +15,13 @@
         <ul id="home-nav-items">
           {% for item in navigation %}
           <li class="home-nav-{{ item.name }}"
-            data-title="{{ item.name }}">
+              data-title="{{ item.name }}">
             <a href="{{ item.href }}"{% if item.target %}
-              target="{{ item.target }}"{% endif %}>
+               target="{{ item.target }}"{% endif %}>
               <i class="fa fa-fw fa-{{ item.icon }}"></i>
+              <div class="home-nav-label">
+                <span>{{ item.name }}</span>
+              </div>
             </a>
           </li>
           {% endfor %}
