@@ -108,17 +108,18 @@ actual Relay application use Backbone.js, Ruby is used for testing (RSpec) and
 automation/tasks (Rake), and we are moving to Ansible for service deployment.
 Infrastructure is all hosted in AWS.
 
-### ProTech Internet Group (present)
+### ProTech Internet Group
 
 I began working on small projects with ProTech in 2012 and continued over the
-next few years taking on larger responsibilities. This position mostly entails
-WordPress plugin and theme development but often involves full site builds,
+next few years taking on larger responsibilities. This position mostly entailed
+WordPress plugin and theme development but often involved full site builds,
 extensive modifications, and a great variety of other development tasks.
 
-I also work on maintaining development and staging servers, building internal
-tools, and much more. Recently, I was also involved in an
-[SEO keyword study](http://backlinko.com/search-engine-ranking) of 1,000,000
-Google search results that was even featured on
+I also worked on maintaining development and staging servers, building
+internal tools, and much more. Earlier this year, I was even involved
+in an [SEO keyword study](http://backlinko.com/search-engine-ranking)
+of 1,000,000 Google search results that was even written about
+on
 [TechCrunch](http://techcrunch.com/2016/02/12/study-says-data-driven-seo-might-be-possible/).
 
 ### SevOne
