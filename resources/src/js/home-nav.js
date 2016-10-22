@@ -13,9 +13,11 @@ function onNavItemHover($el) {
 };
 
 $(function () {
-  $('#home-nav-items > li').mouseover(function () {
-    onNavItemHover($(this));
-  }).mouseout(function () {
-    fadeTitle('xyzy');
-  });
+  if ($(window).width() > 600) {
+    $('#home-nav-items > li').mouseover(function () {
+      onNavItemHover($(this));
+    }).mouseout(function () {
+      fadeTitle('xyzy');
+    });
+  }
 });
