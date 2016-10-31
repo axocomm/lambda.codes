@@ -10,9 +10,10 @@
 <li>PHP/Hack</li>
 <li>Clojure/ClojureScript</li>
 <li>Python</li>
-<li>Ruby</li>
-<li>Bash</li>
 <li>Java</li>
+<li>Ruby</li>
+<li>Perl</li>
+<li>Bash</li>
 <li>C/C++</li>
 </ul>
 </div>
