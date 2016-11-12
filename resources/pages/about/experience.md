@@ -128,8 +128,9 @@ on
 
 ### SevOne
 
-SevOne began as my second co-op with Drexel and continued part time through the
-fall and winter before leaving for Vimbly and resumed briefly for Fall 2015.
+SevOne began as my second co-op with Drexel and continued part time
+through the fall and winter before leaving for Vimbly. I resumed briefly
+in Fall of 2015.
 
 For the first year, I worked on the Dragon Slayers investigating escalated
 support tickets and identifying and fixing defects. I primarily took on tasks
