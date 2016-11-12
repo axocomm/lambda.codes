@@ -82,11 +82,10 @@
 + CakePHP
 + Ruby on Rails
 + Laravel
-+ WordPress API
 
 ## Education
 
-B.S. Software Engineering, Drexel University (2011-present, currently on hold)
+B.S. Software Engineering, Drexel University (2011-2016, currently on hold)
 
 ## Employment History
 
@@ -109,14 +108,18 @@ customer data management and messaging, a few brand new APIs, and
 evaluating and moving some tests over
 to [Midje](https://github.com/marick/Midje) to eventually replace RSpec.
 
-### ProTech Internet Group
+I also hope to work closely with DevOps in the coming weeks to start
+working on development workstation provisioning to replace
+time-consuming manual setup for new machines.
+
+### ProTech Internet Group (present)
 
 I began working on small projects with ProTech in 2012 and continued over the
-next few years taking on larger responsibilities. This position mostly entailed
-WordPress plugin and theme development but often involved full site builds,
+next few years taking on larger responsibilities. This position mostly entails
+WordPress plugin and theme development but often involves full site builds,
 extensive modifications, and a great variety of other development tasks.
 
-I also worked on maintaining development and staging servers, building
+I also work on maintaining development and staging servers, building
 internal tools, and much more. Earlier this year, I was even involved
 in an [SEO keyword study](http://backlinko.com/search-engine-ranking)
 of 1,000,000 Google search results that was even written about
