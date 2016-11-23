@@ -108,10 +108,6 @@ customer data management and messaging, a few brand new APIs, and
 evaluating and moving some tests over
 to [Midje](https://github.com/marick/Midje) to eventually replace RSpec.
 
-I also hope to work closely with DevOps in the coming weeks to start
-working on development workstation provisioning to replace
-time-consuming manual setup for new machines.
-
 ### ProTech Internet Group (present)
 
 I began working on small projects with ProTech in 2012 and continued over the
