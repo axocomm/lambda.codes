@@ -81,7 +81,6 @@
 
 + CakePHP
 + Ruby on Rails
-+ Laravel
 
 ## Education
 
@@ -89,31 +88,13 @@ B.S. Software Engineering, Drexel University (2011-2016, currently on hold)
 
 ## Employment History
 
-### Relay Network (present)
-
-I am currently a full stack developer at Relay Network in Radnor, PA
-working primarily with Clojure. Here, I develop features for multiple
-backend services, work with huge amounts of data, diagnose and fix
-issues of all kinds, and more.
-
-Backend services are all written in Clojure, frontends for portals and the
-actual Relay application use Backbone.js, Ruby is used for testing (RSpec) and
-automation/tasks (Rake), and we are moving to Ansible for service deployment.
-Infrastructure is all hosted in AWS.
-
-The list of projects is already quite long, but recently I have been
-involved with an overhaul of the internal file processing system for
-customer data management and messaging, a few brand new APIs, and
-2-token IVR for member onboarding. I am also in the process of
-evaluating and moving some tests over
-to [Midje](https://github.com/marick/Midje) to eventually replace RSpec.
-
 ### ProTech Internet Group (present)
 
-I began working on small projects with ProTech in 2012 and continued over the
-next few years taking on larger responsibilities. This position mostly entails
-WordPress plugin and theme development but often involves full site builds,
-extensive modifications, and a great variety of other development tasks.
+I began working on small projects with ProTech in 2012 and continued
+over the next few years taking on larger responsibilities. This
+position mostly entails WordPress plugin and theme development but
+often involves full site builds, extensive modifications, and some
+mobile development.
 
 I also work on maintaining development and staging servers, building
 internal tools, and much more. Earlier this year, I was even involved
@@ -121,6 +102,23 @@ in an [SEO keyword study](http://backlinko.com/search-engine-ranking)
 of 1,000,000 Google search results that was even written about
 on
 [TechCrunch](http://techcrunch.com/2016/02/12/study-says-data-driven-seo-might-be-possible/).
+
+### Relay Network
+
+At Relay Network, I was a full stack developer working primarily with
+Clojure. Here, I developed features for multiple backend services, worked
+with huge amounts of data, diagnosed and fix issues of all kinds, and
+more.
+
+Backend services were all written in Clojure, frontends for portals
+and the actual Relay application used Backbone.js, Ruby was used for
+testing (RSpec) and automation/tasks (Rake), Ansible was starting to
+be used for service deployment.  Infrastructure was all hosted in AWS.
+
+The list of projects is quite long, but I had been involved with an
+overhaul of the internal file processing system for customer data
+management and messaging, a few brand new APIs, and 2-token IVR for
+member onboarding.
 
 ### SevOne
 
