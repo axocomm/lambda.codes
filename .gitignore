@@ -19,3 +19,4 @@ resources/public/js/
 .tern-port
 
 *.pyc
+resources/config.yml
