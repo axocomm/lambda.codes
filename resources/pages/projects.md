@@ -8,7 +8,7 @@ A simple RackTables API and reporting tool
 
 ### xyzyxyzy.xyz
 
-[GitHub](https://github.com/axocomm/xyzy-min)<br>
+[GitHub](https://github.com/axocomm/xyzyxyzy.xyz)<br>
 This site is a simple Flask application that renders pages from Markdown files.
 It is running inside a Docker container hosted by Debian.
 
