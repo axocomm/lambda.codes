@@ -169,7 +169,7 @@ was used for source code exploration, code reviews, and much more.
 
 ### Vimbly
 
-For spring 2015, I worked for New York City startup Vimbly as a web
+For the spring of 2015, I worked for New York City startup Vimbly as a web
 developer intern. Responsibilities here started day one with beginning
 split testing with [Optimizely](https://www.optimizely.com/) and
 cleanly integrating these tests into the Vimbly website. This soon
@@ -179,7 +179,7 @@ dashboard and VimblyBot system.
 
 A few larger projects include the integration of CasperJS into the
 VimblyBot infrastructure and the replacement of the existing bot
-batcher with a new, cleaner scheduler daemon. Other operational duties
+batcher with a new, more maintainable scheduler daemon. Other operational duties
 and extra projects involved working with MySQL replication, AWS, and
 Plack.
 
