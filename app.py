@@ -95,5 +95,4 @@ def render_404(error):
 if __name__ == '__main__':
     if 'PAGE_DIR' in os.environ:
         app.config['PAGE_DIR'] = os.environ['PAGE_DIR']
-    navigation = load_navigation('resources/navigation.yml')
     app.run(debug=True, host='0.0.0.0')
