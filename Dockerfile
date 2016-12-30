@@ -1,9 +1,7 @@
-FROM ubuntu:latest
+FROM alpine:latest
 MAINTAINER axocomm <axocomm@gmail.com>
 
-RUN apt-get update && apt-get install -y \
-    python-pip \
-    python-dev
+RUN apk add --no-cache py-pip python-dev
 
 COPY . /app
 WORKDIR /app
