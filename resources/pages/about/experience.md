@@ -15,13 +15,13 @@
 <li>Perl</li>
 <li>Bash</li>
 <li>C/C++</li>
-<li>Kotlin</li>
 </ul>
 </div>
 <div class="one-half">
 <ul>
 <li>Common Lisp</li>
 <li>Haskell</li>
+<li>Kotlin</li>
 <li>HTML</li>
 <li>CSS</li>
 <li>JavaScript</li>
@@ -36,7 +36,6 @@
 <div class="one-half first">
 <ul>
 <li>Emacs</li>
-<li>vim</li>
 <li>Git</li>
 <li>Mercurial</li>
 <li>MySQL</li>
