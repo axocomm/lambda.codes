@@ -7,14 +7,15 @@
 <div class="row" id="language-list">
 <div class="one-half first">
 <ul>
-<li>PHP/Hack</li>
 <li>Clojure/ClojureScript</li>
+<li>PHP/Hack</li>
 <li>Python</li>
 <li>Java</li>
 <li>Ruby</li>
 <li>Perl</li>
 <li>Bash</li>
 <li>C/C++</li>
+<li>Kotlin</li>
 </ul>
 </div>
 <div class="one-half">
@@ -77,10 +78,16 @@
 </div>
 </div>
 
-### Frameworks
+### Backend Frameworks
 
 + CakePHP
 + Ruby on Rails
++ Flask
+
+### Frontend Frameworks
+
++ Vue.js
++ Backbone.js
 
 ## Education
 
@@ -88,19 +95,26 @@ B.S. Software Engineering, Drexel University (2011-2016, currently on hold)
 
 ## Employment History
 
+### Picwell (present)
+
+I recently started a software engineering position at Philadelphia startup
+Picwell, where I will be doing feature development and DevOps for the team
+responsible for our Medicare plan recommendation platform.
+
 ### ProTech Internet Group (present)
 
 I began working on small projects with ProTech in 2012 and continued
 over the next few years taking on larger responsibilities. This
 position mostly entails WordPress plugin and theme development but
-often involves full site builds, extensive modifications, and some
-mobile development.
+often involves full site builds and extensive modifications. Recent
+projects also include support and development for a custom eCommerce
+platform as well as an Android application for a YC-backed startup.
 
 I also work on maintaining development and staging servers, building
-internal tools, and much more. Earlier this year, I was even involved
-in an [SEO keyword study](http://backlinko.com/search-engine-ranking)
-of 1,000,000 Google search results that was even written about
-on
+internal tools, and much more. Last year, I was even involved in
+an [SEO keyword study](http://backlinko.com/search-engine-ranking) of
+1,000,000 Google search results that was even written about
+in a few different publications, including
 [TechCrunch](http://techcrunch.com/2016/02/12/study-says-data-driven-seo-might-be-possible/).
 
 ### Relay Network
