@@ -15,10 +15,12 @@ app.config['PAGE_DIR'] = 'resources/pages'
 
 NAVIGATION = 'resources/navigation.yml'
 
+
 def load_navigation(filename):
     with open(filename) as fh:
         return yaml.load(fh.read())
     return []
+
 
 def get_navigation(base=None):
     """Get navigation items and add `active` class
@@ -33,6 +35,7 @@ def get_navigation(base=None):
         for item in navigation
     ]
 
+
 def find_title(content):
     lines = content.split('\n')
     matches = [
@@ -45,6 +48,7 @@ def find_title(content):
     else:
         return matches[0].lstrip('# ')
 
+
 @app.route('/')
 def render_home():
     return render_template(
@@ -52,12 +56,14 @@ def render_home():
         navigation=get_navigation()
     )
 
+
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(
         os.path.join(app.root_path, 'resources/public'),
         'favicon.png'
     )
+
 
 @app.route('/<path:page>')
 def render_page(page):
@@ -84,6 +90,7 @@ def render_page(page):
             title=title
         )
 
+
 @app.errorhandler(404)
 def render_404(error):
     return render_template(
@@ -91,6 +98,7 @@ def render_404(error):
         error=error,
         navigation=get_navigation()
     ), 404
+
 
 if __name__ == '__main__':
     if 'PAGE_DIR' in os.environ:
