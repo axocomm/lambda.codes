@@ -1,10 +1,10 @@
 require 'net/ssh'
 require 'yaml'
 
-PORT = ENV['PORT'] || 5000
-IMAGE_NAME = 'xyzy-min'
-REPO = 'git@gitlab.com:axocomm/xyzy-min.git'
-CONFIG = 'resources/config.yml'
+PORT = (ENV['PORT'] || 5000).freeze
+IMAGE_NAME = 'xyzy-min'.freeze
+REPO = 'git@gitlab.com:axocomm/xyzy-min.git'.freeze
+CONFIG = 'resources/config.yml'.freeze
 
 class Hash
   def symbolize
@@ -19,18 +19,18 @@ end
 
 def get_config(environment)
   file = "#{Dir.pwd}/#{CONFIG}"
-  fail "#{file} doesn't exist" unless File.exists?(file)
+  raise "#{file} doesn't exist" unless File.exists?(file)
   File.open(file) do |fh|
     conf = YAML.load(fh.read).symbolize
-    dc = conf[:deploy] or fail "Missing 'deploy' in configuration"
+    dc = conf[:deploy] or raise "Missing 'deploy' in configuration"
 
-    fail "Invalid environment #{environment}" unless dc.include?(environment)
+    raise "Invalid environment #{environment}" unless dc.include?(environment)
     dc[environment]
   end
 end
 
 environment = (ENV['ENVIRONMENT'] || 'staging').to_sym
-$config = get_config(environment) or fail "Could not get configuration"
+$config = get_config(environment) or raise 'Could not get configuration'
 
 task :default => 'dev:run'
 
@@ -94,11 +94,11 @@ task :deploy => 'gulp:build' do
   prefix = "cd #{remote_path} && ENVIRONMENT=#{ENV['ENVIRONMENT']}"
 
   commands = [
-    "bundle install --deployment",
-    "bundle exec rake docker:build",
-    "bundle exec rake docker:stop",
-    "bundle exec rake docker:rm",
-    "bundle exec rake docker:run"
+    'bundle install --deployment',
+    'bundle exec rake docker:build',
+    'bundle exec rake docker:stop',
+    'bundle exec rake docker:rm',
+    'bundle exec rake docker:run'
   ].map { |c| "#{prefix} #{c}" }
 
   Net::SSH.start(host, user, options) do |ssh|

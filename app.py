@@ -1,8 +1,9 @@
 from flask import Flask, Markup, render_template, \
     abort, send_from_directory
-import markdown
+
 import os
 import os.path
+import markdown
 import yaml
 
 app = Flask(

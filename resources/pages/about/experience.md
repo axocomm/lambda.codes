@@ -120,7 +120,7 @@ in a few different publications, including
 
 At Relay Network, I was a full stack developer working primarily with
 Clojure. Here, I developed features for multiple backend services, worked
-with huge amounts of data, diagnosed and fix issues of all kinds, and
+with huge amounts of data, diagnosed and fixed issues of all kinds, and
 more.
 
 Backend services were all written in Clojure, frontends for portals
