@@ -20,3 +20,4 @@ resources/public/js/
 
 *.pyc
 resources/config.yml
+package-lock.json
