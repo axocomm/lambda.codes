@@ -144,7 +144,7 @@ support tickets and identifying and fixing defects. I primarily took on tasks
 related to the web application component and reporting framework of SevOne NMS,
 particularly with C++, PHP, and JavaScript (vanilla, ExtJS, jQuery). I also
 worked on diagnosing and fixing issues with appliance clustering (namely
-problems adding peers), licencing, browser compatibility, and MySQL replication.
+problems adding peers), licensing, browser compatibility, and MySQL replication.
 
 I returned to SevOne part time for the fall term and transferred to the Honey
 Badgers, who deal almost exclusively with fixing defects.
