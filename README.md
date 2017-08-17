@@ -145,3 +145,14 @@ Configuration for Nginx just involves setting up a reverse proxy. For example:
       root /www/xyzyxyzy.xyz;
       index index.html;
     }
+
+## Testing
+
+A few tests are included and are located in `test_app.py` which check the following:
+
+* homepage rendering
+* Markdown file rendering
+* `index.md` rendering
+* missing page returning a 404
+
+and can be run with `python test_app.py`.
