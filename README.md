@@ -130,7 +130,12 @@ Deployment configuration is done per-environment in `resources/config.yml` and s
         listen_port: 5000
         name: xyzy-min
 
-Most of these are pretty self-explanatory. `name` just specifies the name of the Docker container. The `listen_port` defines which port should be exposed. Setting the `PORT` environment variable (defaults to 5000) determines which port Flask itself should be listening on.
+Most of these are pretty self-explanatory. `name` just specifies the name of the Docker container. The `listen_port` defines which port should be exposed.
+
+A few environment variables also come into play:
+
+* `PORT` (defaults to 5000): determines which port Flask itself should be listening on
+* `ENVIRONMENT` (defaults to 'staging'): which deployment configuration to use
 
 ### Nginx
 
