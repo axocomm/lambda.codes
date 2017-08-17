@@ -161,3 +161,11 @@ Configuration for Nginx just involves setting up a reverse proxy. For example:
       root /www/xyzyxyzy.xyz;
       index index.html;
     }
+    
+### Managing Pages
+
+Changes to page content can be pushed without doing another deploy either by SCPing or using the `push_pages` Rake task, e.g.
+
+    ENVIRONMENT=prod rake push_pages
+    
+Likewise, any pages updated remotely can be pulled with `pull_pages`.
