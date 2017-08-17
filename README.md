@@ -40,7 +40,8 @@ As is shown here, each item takes the following:
 
 * `href`: just the navigation link
 * `icon`: an icon to use (using [icons from Font Awesome](http://fontawesome.io/icons/))
-* `name`: the title of the item
+* `name`: the name of the item (used for determining which navigation item to highlight)
+* `title`: the title displayed
 * `target` (optional): used for opening links in a new window
 
 ### Frontend Components
