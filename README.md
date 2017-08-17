@@ -65,6 +65,12 @@ Running the app is quite simple:
     pip install -r requirements.txt
     ```
     
+* If you're using any of the Rake tasks, install Ruby requirements
+
+    ```
+    bundle
+    ```
+    
 * Install Gulp globally (if not already installed) and Node requirements
 
     ```
@@ -115,6 +121,10 @@ The deploy process is probably not ideal at the moment but is still pretty strai
 4. Builds Docker container
 5. Stops and removes existing container if applicable
 6. Starts the new container
+
+The `deploy` Rake task takes care of this, e.g.
+
+    ENVIRONMENT=prod rake deploy
 
 ### Configuration
 
