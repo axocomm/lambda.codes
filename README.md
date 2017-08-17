@@ -89,6 +89,17 @@ Running the app is quite simple:
 	
 At this point the application should be available at `http://localhost:5000`.
 
+## Testing
+
+A few tests are included and are located in `test_app.py` which check the following:
+
+* homepage rendering
+* Markdown file rendering
+* `index.md` rendering
+* missing page returning a 404
+
+and can be run with `python test_app.py`.
+
 ## Deployment
 
 The deploy process is probably not ideal at the moment but is still pretty straightforward (I think). The process is as follows:
@@ -145,14 +156,3 @@ Configuration for Nginx just involves setting up a reverse proxy. For example:
       root /www/xyzyxyzy.xyz;
       index index.html;
     }
-
-## Testing
-
-A few tests are included and are located in `test_app.py` which check the following:
-
-* homepage rendering
-* Markdown file rendering
-* `index.md` rendering
-* missing page returning a 404
-
-and can be run with `python test_app.py`.
