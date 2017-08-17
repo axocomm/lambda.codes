@@ -9,6 +9,7 @@ class XyzyAppTestCase(unittest.TestCase):
         self.app = xyzy.app.test_client()
 
     def test_homepage_renders(self):
+        """The app should render the homepage at '/'."""
         rv = self.app.get('/')
 
         assert rv.status == '200 OK'
@@ -31,8 +32,13 @@ class XyzyAppTestCase(unittest.TestCase):
         assert b'<h1>About</h1>' in rv.data
 
     def test_missing_page_returns_404(self):
+        """The app should return a 404 status and display an error if the page
+        requested is not found.
+        """
         rv = self.app.get('/nothing')
         assert rv.status == '404 NOT FOUND'
+        assert b'<h1>Error</h1>' in rv.data
+        assert b'404: Not Found' in rv.data
 
 
 if __name__ == '__main__':
