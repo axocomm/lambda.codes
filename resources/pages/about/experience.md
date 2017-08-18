@@ -50,6 +50,7 @@
 <li>JIRA</li>
 <li>Phabricator</li>
 <li>Docker</li>
+<li>Jenkins</li>
 </ul>
 </div>
 </div>
