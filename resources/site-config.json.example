@@ -1,0 +1,6 @@
+{
+  "ssh_user": "deploy",
+  "ssh_host": "lambda.codes",
+  "ssh_key": "~/.ssh/id_rsa.pub",
+  "ssh_port": 3033
+}
