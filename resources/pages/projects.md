@@ -21,7 +21,7 @@ come courtesy of [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
 Not on GitHub yet, but this is a Ruby Gem that allows deployments to
 be specified using a number of straightforward step helper functions
 (`create_directory`, `copy_file`, `clone_repository`, etc.) and other
-Ruby code in an [`lcdfile`](https://github.com/axocomm/lambda.codes/blob/master/lcdfile).
+Ruby code in an [`lcdfile`](https://github.com/axocomm/xyzy-site/blob/master/lcdfile).
 It tries to be a little more robust than using `Rakefile`s or shell
 scripts without getting to the level of Chef or Ansible and
 facilitates deploys of basic applications from individual project

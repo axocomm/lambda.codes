@@ -1,8 +1,8 @@
 configure from_file: 'resources/site-config.json'  # TODO: YAML
 
-repo_dir = '/home/deploy/lambda-codes'
+repo_dir = '/home/deploy/xyzy-site'
 
-clone_repository 'git@github.com:axocomm/lambda.codes',
+clone_repository 'git@github.com:axocomm/xyzy-site',
                  target: repo_dir,
                  branch: 'master'
 
@@ -11,10 +11,10 @@ run_command 'gulp build', cwd: repo_dir
 
 copy_file 'resources/config.yml', target: "#{repo_dir}/resources/config.yml"
 
-build_docker_image 'lc-site',
+build_docker_image 'xyzy-site',
                    path: repo_dir
 
-run_docker_container 'lc-site',
-                     image: 'lc-site',
-                     ports: [[5005, 5000]],
+run_docker_container 'xyzy-site',
+                     image: 'xyzy-site',
+                     ports: [[5000, 5000]],
                      volumes: [["#{repo_dir}/resources/pages", '/pages']]
