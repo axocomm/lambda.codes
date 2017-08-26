@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var cleanCss = require('gulp-clean-css');
 var del = require('del');
+var uglify = require('gulp-uglify');
 
 var manifest = {
   scss: ['resources/src/scss/**/*.scss'],
@@ -28,6 +29,7 @@ gulp.task('scss', function () {
 
 gulp.task('js', function () {
   return gulp.src(manifest.js)
+    .pipe(uglify())
     .pipe(gulp.dest(dest.js));
 });
 
