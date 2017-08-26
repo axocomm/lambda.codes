@@ -1,5 +1,7 @@
 from flask import Flask, Markup, render_template, \
-    abort, send_from_directory
+    abort, send_from_directory, request
+
+from htmlmin.minify import html_minify
 
 import os
 import os.path
@@ -52,10 +54,12 @@ def find_title(content):
 
 @app.route('/')
 def render_home():
-    return render_template(
+    rendered = render_template(
         'home.html',
         navigation=get_navigation()
     )
+
+    return html_minify(rendered)
 
 
 @app.route('/favicon.ico')
@@ -84,12 +88,14 @@ def render_page(page):
         title = find_title(file_content)
         content = Markup(markdown.markdown(file_content))
         base = page.split('/')[0]
-        return render_template(
+        rendered = render_template(
             'page.html',
             content=content,
             navigation=get_navigation(base),
             title=title
         )
+
+        return html_minify(rendered)
 
 
 @app.errorhandler(404)

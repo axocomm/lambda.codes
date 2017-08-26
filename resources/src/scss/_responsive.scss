@@ -40,11 +40,7 @@
   nav#main ul li a {
     font-size: 20px;
     padding-right: 8px;
-    margin-right: 8px;
-  }
-
-  #site-logo a {
-    margin-right: 10px;
+    margin-right: 0px;
   }
 
   nav#main ul li.active a,
@@ -54,6 +50,11 @@
     background-color: #fff;
     color: #000;
     padding-left: 10px;
+  }
+
+  nav#main ul li a i,
+  #site-logo a i {
+    padding-right: 8px;
   }
 
   main#content {
