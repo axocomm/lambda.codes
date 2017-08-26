@@ -1,7 +1,12 @@
 Flask==0.10.1
-itsdangerous==0.24
 Jinja2==2.8
 Markdown==2.4.1
 MarkupSafe==0.23
 PyYAML==3.12
 Werkzeug==0.11.8
+beautifulsoup4==4.6.0
+django-htmlmin==0.10.0
+html5lib==0.999999999
+itsdangerous==0.24
+six==1.10.0
+webencodings==0.5.1

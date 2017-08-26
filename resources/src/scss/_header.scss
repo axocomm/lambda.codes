@@ -29,6 +29,11 @@ nav#main ul li a,
   background: none;
 }
 
+nav#main ul li a i,
+#site-logo a i {
+  padding-right: 4px;
+}
+
 nav#main ul li span.item-title {
   display: none;
 }
