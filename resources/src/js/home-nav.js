@@ -14,9 +14,9 @@ function onNavItemHover($el) {
 
 $(function () {
   if ($(window).width() > 600) {
-    $('#home-nav-items > li').mouseover(function () {
+    $('#home-nav-items > li').hover(function () {
       onNavItemHover($(this));
-    }).mouseout(function () {
+    }, function () {
       fadeTitle('xyzy');
     });
   }

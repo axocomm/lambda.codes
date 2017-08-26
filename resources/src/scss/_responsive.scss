@@ -8,7 +8,7 @@
     padding-right: 10px;
   }
 
-  nav#main ul li:hover span.item-title {
+  nav#main ul li.hover span.item-title {
     display: none;
   }
 
@@ -44,7 +44,7 @@
   }
 
   nav#main ul li.active a,
-  nav#main ul li:hover a {
+  nav#main ul li.hover a {
     border-left: none;
     border-bottom: 5px solid #000;
     background-color: #fff;

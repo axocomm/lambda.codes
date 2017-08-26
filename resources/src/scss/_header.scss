@@ -38,7 +38,7 @@ nav#main ul li span.item-title {
   display: none;
 }
 
-nav#main ul li:hover a,
+nav#main ul li.hover a,
 #site-logo a {
   color: #fff;
   background-color: #000;
@@ -49,7 +49,7 @@ nav#main ul li.active a {
   padding-left: 5px;
 }
 
-nav#main ul li:hover span.item-title,
+nav#main ul li.hover span.item-title,
 #site-logo .site-title {
   display: inline;
   cursor: default;

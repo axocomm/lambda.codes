@@ -8,7 +8,8 @@ var uglify = require('gulp-uglify');
 
 var manifest = {
   scss: ['resources/src/scss/**/*.scss'],
-  js: ['resources/src/js/home-nav.js']
+  js: ['resources/src/js/home-nav.js',
+       'resources/src/js/navigation.js']
 };
 
 var dest = {
