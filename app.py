@@ -52,6 +52,11 @@ def find_title(content):
         return matches[0].lstrip('# ')
 
 
+def render_content(content):
+    """Render the given content, minified unless `app.debug` is set."""
+    return html_minify(content) if not app.debug else content
+
+
 @app.route('/')
 def render_home():
     rendered = render_template(
@@ -59,7 +64,7 @@ def render_home():
         navigation=get_navigation()
     )
 
-    return html_minify(rendered)
+    return render_content(rendered)
 
 
 @app.route('/favicon.ico')
@@ -95,7 +100,7 @@ def render_page(page):
             title=title
         )
 
-        return html_minify(rendered)
+        return render_content(rendered)
 
 
 @app.errorhandler(404)
@@ -110,4 +115,5 @@ def render_404(error):
 if __name__ == '__main__':
     if 'PAGE_DIR' in os.environ:
         app.config['PAGE_DIR'] = os.environ['PAGE_DIR']
-    app.run(debug=True, host='0.0.0.0')
+    debug = 'DEBUG' in os.environ and os.environ['DEBUG']
+    app.run(debug=debug, host='0.0.0.0')
