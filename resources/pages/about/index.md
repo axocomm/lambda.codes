@@ -1,9 +1,9 @@
 # About
 
-Hello. My name is Trevor, and I am a software engineer focusing on web
-development, DevOps, and some Unix system administration. I grew up at
-the Jersey Shore and currently reside in the Overbrook Farms section
-of Philadelphia.
+Hello. My name is Trevor, and I am a software engineer focusing on
+backend web development, DevOps, and some Unix system
+administration. I grew up at the Jersey Shore and currently reside in
+the Overbrook Farms section of Philadelphia.
 
 I am currently happily employed at Philadelphia startup Picwell, where
 I help out with DevOps and feature development for our Medicare plan
