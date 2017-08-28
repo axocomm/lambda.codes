@@ -125,7 +125,7 @@ The deploy process is probably not ideal at the moment but is still pretty strai
 The `deploy` Rake task takes care of this, e.g.
 
     ENVIRONMENT=prod rake deploy
-
+    
 ### Configuration
 
 Deployment configuration is done per-environment in `resources/config.yml` and should look as follows:
@@ -173,7 +173,12 @@ Configuration for Nginx just involves setting up a reverse proxy. For example:
       index index.html;
     }
     
-### Managing Pages
+### `lcdfile`
+
+The `lcdfile` in this repository now takes care of deployments, and once `lcdeploy` is put up somewhere (super WIP right now), you will be able to use that. This file just contains some lines of Ruby code that handle things like cloning the repository, building the Docker image, and running it. Deployment is a matter of creating a simple configuration file with some SSH information (like `resources/site-config.json.example`) and running `lcd deploy`. More information *should* be forthcoming.
+
+    
+## Managing Pages
 
 Changes to page content can be pushed without doing another deploy either by SCPing or using the `push_pages` Rake task, e.g.
 
