@@ -6,6 +6,7 @@ import app as xyzy
 class XyzyAppTestCase(unittest.TestCase):
     def setUp(self):
         xyzy.app.testing = True
+        xyzy.app.debug = True
         self.app = xyzy.app.test_client()
 
     def test_homepage_renders(self):
@@ -39,6 +40,18 @@ class XyzyAppTestCase(unittest.TestCase):
         assert rv.status == '404 NOT FOUND'
         assert b'<h1>Error</h1>' in rv.data
         assert b'404: Not Found' in rv.data
+
+    def test_html_minification_when_debug_not_set(self):
+        """The `DEBUG` environment variable should disable HTML minification."""
+        xyzy.app.debug = False
+        rv = self.app.get('/')
+        assert rv.status == '200 OK'
+        assert '<!DOCTYPE html><html><head><meta charset="utf-8"/>' in rv.data
+
+        xyzy.app.debug = True
+        rvv = self.app.get('/')
+        assert rv.status == '200 OK'
+        assert b'<!doctype html>\n<html>\n  <head>' in rvv.data
 
 
 if __name__ == '__main__':
