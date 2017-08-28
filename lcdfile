@@ -1,4 +1,4 @@
-configure from_file: 'resources/site-config.json'  # TODO: YAML
+configure from_json: 'resources/site-config.json'
 
 repo_dir = '/home/deploy/xyzy-site'
 
@@ -8,8 +8,6 @@ clone_repository 'git@github.com:axocomm/xyzy-site',
 
 run_command 'npm i', cwd: repo_dir
 run_command 'gulp build', cwd: repo_dir
-
-copy_file 'resources/config.yml', target: "#{repo_dir}/resources/config.yml"
 
 build_docker_image 'xyzy-site',
                    path: repo_dir
