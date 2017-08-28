@@ -64,13 +64,13 @@ Running the app is quite simple:
     source venv/bin/activate
     pip install -r requirements.txt
     ```
-    
+
 * If you're using any of the Rake tasks, install Ruby requirements
 
     ```
     bundle
     ```
-    
+
 * Install Gulp globally (if not already installed) and Node requirements
 
     ```
@@ -83,17 +83,19 @@ Running the app is quite simple:
     ```
     gulp build
     ```
-	
+
 	You may also start watching resources for automatic compilation with `gulp d`.
 
 * Run the server
 
     ```
-    python -m app
+    DEBUG=true python -m app
     ```
-    
-    You can specify an alternate directory for pages by setting the `PAGE_DIR` environment variable before running the server.
-	
+
+    The `DEBUG` environment variable being set will run the server in debug mode and disable HTML minification.
+
+    You can also specify an alternate directory for pages by setting the `PAGE_DIR` environment variable before running the server.
+
 At this point the application should be available at `http://localhost:5000`.
 
 ## Testing
@@ -125,7 +127,7 @@ The deploy process is probably not ideal at the moment but is still pretty strai
 The `deploy` Rake task takes care of this, e.g.
 
     ENVIRONMENT=prod rake deploy
-    
+
 ### Configuration
 
 Deployment configuration is done per-environment in `resources/config.yml` and should look as follows:
@@ -172,16 +174,16 @@ Configuration for Nginx just involves setting up a reverse proxy. For example:
       root /www/xyzyxyzy.xyz;
       index index.html;
     }
-    
+
 ### `lcdfile`
 
 The `lcdfile` in this repository now takes care of deployments, and once `lcdeploy` is put up somewhere (super WIP right now), you will be able to use that. This file just contains some lines of Ruby code that handle things like cloning the repository, building the Docker image, and running it. Deployment is a matter of creating a simple configuration file with some SSH information (like `resources/site-config.json.example`) and running `lcd deploy`. More information *should* be forthcoming.
 
-    
+
 ## Managing Pages
 
 Changes to page content can be pushed without doing another deploy either by SCPing or using the `push_pages` Rake task, e.g.
 
     ENVIRONMENT=prod rake push_pages
-    
+
 Likewise, any pages updated remotely can be pulled with `pull_pages`.
