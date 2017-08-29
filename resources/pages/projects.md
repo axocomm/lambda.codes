@@ -18,7 +18,8 @@ come courtesy of [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
 
 ### lcdeploy
 
-Not on GitHub yet, but this is a Ruby Gem that allows deployments to
+[GitHub](https://github.com/axocomm/lcdeploy)<br>
+This is a Ruby Gem that allows deployments to
 be specified using a number of straightforward step helper functions
 (`create_directory`, `copy_file`, `clone_repository`, etc.) and other
 Ruby code in an [`lcdfile`](https://github.com/axocomm/xyzy-site/blob/master/lcdfile).
