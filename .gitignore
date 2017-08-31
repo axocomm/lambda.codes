@@ -22,3 +22,4 @@ resources/public/js/
 resources/config.yml
 package-lock.json
 resources/site-config.json
+venv/
