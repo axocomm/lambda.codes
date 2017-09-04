@@ -40,7 +40,7 @@ As is shown here, each item takes the following:
 
 * `href`: just the navigation link
 * `icon`: an icon to use (using [icons from Font Awesome](http://fontawesome.io/icons/))
-* `name`: the name of the item (used for determining which navigation item to highlight)
+* `name`: the name of the item (also used for determining which icon to highlight, for example `/about/experience` would highlight the `about` item)
 * `title`: the title displayed
 * `target` (optional): used for opening links in a new window
 
@@ -106,12 +106,13 @@ A few tests are included and are located in `test_app.py` which check the follow
 * Markdown file rendering
 * `index.md` rendering
 * missing page returning a 404
+* HTML minification disabled when `DEBUG` is set
 
 and can be run with `python test_app.py`.
 
 ## Deployment
 
-The deploy process is probably not ideal at the moment but is still pretty straightforward (I think). The process is as follows:
+This deploy process is probably not ideal at the moment but is still pretty straightforward (I think). The process is as follows:
 
 1. Builds frontend resources
 2. Copies required files to the remote server
@@ -121,7 +122,7 @@ The deploy process is probably not ideal at the moment but is still pretty strai
     * pages
 3. Installs Ruby requirements
 4. Builds Docker container
-5. Stops and removes existing container if applicable
+5. Stops and removes existing container if necessary
 6. Starts the new container
 
 The `deploy` Rake task takes care of this, e.g.
@@ -177,7 +178,7 @@ Configuration for Nginx just involves setting up a reverse proxy. For example:
 
 ### `lcdfile`
 
-The `lcdfile` in this repository now takes care of deployments, and once `lcdeploy` is put up somewhere (super WIP right now), you will be able to use that. This file just contains some lines of Ruby code that handle things like cloning the repository, building the Docker image, and running it. Deployment is a matter of creating a simple configuration file with some SSH information (like `resources/site-config.json.example`) and running `lcd deploy`. More information *should* be forthcoming.
+The `lcdfile` in this repository now takes care of deployments. This file just contains some lines of Ruby code that handle things like cloning the repository, building the Docker image, and running it. Deployment is a matter of creating a simple configuration file with some SSH information (like `resources/site-config.json.example`) and running `lcd deploy`. If you'd like you can have a look at the [lcdeploy repository](https://github.com/axocomm/lcdeploy). Just keep in mind the tool is extremely WIP.
 
 
 ## Managing Pages
