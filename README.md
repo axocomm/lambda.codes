@@ -61,7 +61,7 @@ Running the app is quite simple:
 
 * Create virtual environment and install Python requirements
 
-    ``` shellsession
+    ```
     virtualenv venv
     source venv/bin/activate
     pip install -r requirements.txt
@@ -69,20 +69,20 @@ Running the app is quite simple:
 
 * If you're using any of the Rake tasks, install Ruby requirements
 
-    ``` shellsession
+    ```
     bundle
     ```
 
 * Install Gulp globally (if not already installed) and Node requirements
 
-    ``` shellsession
+    ```
     npm install -g gulp
     npm install
     ```
 
 * Compile frontend resources
 
-    ``` shellsession
+    ```
     gulp build
     ```
 
@@ -90,7 +90,7 @@ You may also start watching resources for automatic compilation with `gulp d`.
 
 * Run the server
 
-    ``` shellsession
+    ```
     DEBUG=true python -m app
     ```
 
@@ -129,7 +129,7 @@ This deploy process is probably not ideal at the moment but is still pretty stra
 
 The `deploy` Rake task takes care of this, e.g.
 
-``` shellsession
+```
 ENVIRONMENT=prod rake deploy
 ```
 ### Configuration
@@ -191,7 +191,7 @@ The `lcdfile` in this repository now takes care of deployments. This file just c
 
 Changes to page content can be pushed without doing another deploy either by SCPing or using the `push_pages` Rake task, e.g.
 
-``` shellsession
+```
 ENVIRONMENT=prod rake push_pages
 ```
 
