@@ -41,17 +41,19 @@ class XyzyAppTestCase(unittest.TestCase):
         assert b'<h1>Error</h1>' in rv.data
         assert b'404: Not Found' in rv.data
 
-    def test_html_minification_when_debug_not_set(self):
-        """The `DEBUG` environment variable should disable HTML minification."""
+    def test_minification_without_debug(self):
+        """HTML Minification should occur if not in debug mode."""
         xyzy.app.debug = False
         rv = self.app.get('/')
         assert rv.status == '200 OK'
         assert '<!DOCTYPE html><html><head><meta charset="utf-8"/>' in rv.data
 
+    def test_minification_with_debug(self):
+        """HTML minification should not occur if in debug mode."""
         xyzy.app.debug = True
-        rvv = self.app.get('/')
+        rv = self.app.get('/')
         assert rv.status == '200 OK'
-        assert b'<!doctype html>\n<html>\n  <head>' in rvv.data
+        assert b'<!doctype html>\n<html>\n  <head>' in rv.data
 
 
 if __name__ == '__main__':
