@@ -1,11 +1,5 @@
 # Selected Projects
 
-### racknews
-
-[GitHub](https://github.com/axocomm/racknews2)<br>
-A simple RackTables API and reporting tool
-(WIP rewrite of [RackNews](https://github.com/axocomm/racknews))
-
 ### xyzyxyzy.xyz
 
 [GitHub](https://github.com/axocomm/xyzy-site)<br>
@@ -49,9 +43,9 @@ directly with the APIs of SoundCloud, Reddit, YouTube, and more.
 A simple Docker-based WordPress setup that provides an easy-to-use environment for
 working on multiple local development installations
 
-### utils
+### racknews
 
-[GitHub](https://github.com/axocomm/utils)<br>
-Just a few small utilities.
+[GitHub](https://github.com/axocomm/racknews2)<br>
+A simple RackTables API and reporting tool
 
 Most of these are perpetually WIP. More to come soon (hopefully).
