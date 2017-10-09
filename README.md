@@ -114,47 +114,34 @@ and can be run with `python test_app.py`.
 
 ## Deployment
 
-This deploy process is probably not ideal at the moment but is still pretty straightforward (I think). The process is as follows:
+The `lcdfile` in this repository now takes care of deployments (minus Nginx configuration, which should be forthcoming). This file just contains some lines of Ruby code that handle things like cloning the repository, building the Docker image, and running the container. Deployment is a matter of creating a simple configuration file with some SSH information (like `resources/site-config.json.example`) and running `lcd deploy`. If you'd like you can have a look at the [lcdeploy repository](https://github.com/axocomm/lcdeploy). Just keep in mind the tool is extremely WIP.
 
-1. Builds frontend resources
-2. Copies required files to the remote server
-    * application source
-    * Rakefile
-    * resources
-    * pages
-3. Installs Ruby requirements
-4. Builds Docker container
-5. Stops and removes existing container if necessary
-6. Starts the new container
+The steps run in this file, which can be run manually if desired, are as follows:
 
-The `deploy` Rake task takes care of this, e.g.
+1. Clone this repository
 
-```
-ENVIRONMENT=prod rake deploy
-```
-### Configuration
+2. Install NPM requirements
 
-Deployment configuration is done per-environment in `resources/config.yml` and should look as follows:
+    `npm i`
+    
+3. Build frontend assets
 
-``` yaml
----
-deploy:
-  prod:
-    host: xyzyxyzy.xyz
-    user: deploy
-    ssh_port: 2200
-    remote_path: "/home/deploy/xyzy-min"
-    page_dir: "/home/deploy/xyzy-min/resources/pages"
-    listen_port: 5000
-    name: xyzy-min
-```
+    `gulp build`
+    
+4. Build the Docker image specified in the `Dockerfile`
 
-Most of these are pretty self-explanatory. `name` just specifies the name of the Docker container. The `listen_port` defines which port should be exposed.
+    `docker build -t xyzy-site:latest .`
+    
+5. Run the Docker container
 
-A few environment variables also come into play:
-
-* `PORT` (defaults to 5000): determines which port Flask itself should be listening on
-* `ENVIRONMENT` (defaults to 'staging'): which deployment configuration to use
+    ```
+    docker run \
+      -d \
+      --name xyzy-site \
+      -p 5000:5000 \
+      -v $(pwd)/resources/pages:/pages \
+      xyzy-site:latest
+    ```
 
 ### Nginx
 
@@ -182,10 +169,6 @@ server {
   index index.html;
 }
 ```
-
-### `lcdfile`
-
-The `lcdfile` in this repository now takes care of deployments. This file just contains some lines of Ruby code that handle things like cloning the repository, building the Docker image, and running it. Deployment is a matter of creating a simple configuration file with some SSH information (like `resources/site-config.json.example`) and running `lcd deploy`. If you'd like you can have a look at the [lcdeploy repository](https://github.com/axocomm/lcdeploy). Just keep in mind the tool is extremely WIP.
 
 ## Managing Pages
 
