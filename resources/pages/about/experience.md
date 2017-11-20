@@ -97,9 +97,13 @@ B.S. Software Engineering, Drexel University (2011-2016, currently on hold)
 
 ### Picwell (present)
 
-I recently started a software engineering position at Philadelphia startup
-Picwell, where I will be doing feature development and DevOps for the team
-responsible for our Medicare plan recommendation platform.
+At Picwell, I perform feature development and help out with DevOps for
+our Medicare plan recommendation platform. This involves extensive
+work in Python (most notably Flask and Pandas) as well as with Chef
+and AWS. Recent endeavors include improving service deployments,
+automating data ingestion and processing tasks, implementing scoring
+and ranking algorithm changes, and integrating a Lambda-based logging
+solution for the API.
 
 ### ProTech Internet Group (present)
 
@@ -108,10 +112,14 @@ over the next few years taking on larger responsibilities. This
 position mostly entails WordPress plugin and theme development but
 often involves full site builds and extensive modifications. Recent
 projects also include support and development for a custom eCommerce
-platform as well as an Android application for a YC-backed startup.
+platform, a comprehensive online shopping research tool
+leveraging [Scrapy](https://scrapy.org/)
+and [Pandas](http://pandas.pydata.org/), a third-party media platform
+integration plugin for WordPress, and an Android application for a
+YC-backed startup.
 
 I also work on maintaining development and staging servers, building
-internal tools, and much more. Last year, I was even involved in
+internal tools, and much more. In late 2015, I was even involved in
 an [SEO keyword study](http://backlinko.com/search-engine-ranking) of
 1,000,000 Google search results that was even written about
 in a few different publications, including
@@ -163,7 +171,7 @@ custom ROM, and making necessary configuration changes for remote access and
 management. By the summer's end this tool supported Nexus 4 and 5 (and
 theoretically any other reasonably open, i.e. not too locked down, device) and
 was used to provision a bunch of phones at the office and recently a bunch more
-*remotely* in the Prineville, OR datacenter.
+*remotely* in the Prineville, Oregon datacenter.
 
 The second project was a battery monitoring script for Android and iOS devices
 in the device labs. It gathered battery voltage information and submitted
