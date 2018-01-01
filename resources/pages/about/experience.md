@@ -110,19 +110,20 @@ solution for the API.
 I began working on small projects with ProTech in 2012 and continued
 over the next few years taking on larger responsibilities. This
 position mostly entails WordPress plugin and theme development but
-often involves full site builds and extensive modifications. Recent
-projects also include support and development for a custom eCommerce
+often involves full site builds or extensive modifications. Recent
+projects include support and development for a custom eCommerce
 platform, a comprehensive online shopping research tool
 leveraging [Scrapy](https://scrapy.org/)
 and [Pandas](http://pandas.pydata.org/), a third-party media platform
 integration plugin for WordPress, and an Android application for a
 YC-backed startup.
 
-I also work on maintaining development and staging servers, building
-internal tools, and much more. In late 2015, I was even involved in
+I also work on maintaining infrastructure, building internal tools,
+and much more. In late 2015, I was even involved in
 an [SEO keyword study](http://backlinko.com/search-engine-ranking) of
-1,000,000 Google search results that was even written about
-in a few different publications, including
+1,000,000 Google search results that was even written about in a few
+different publications,
+including
 [TechCrunch](http://techcrunch.com/2016/02/12/study-says-data-driven-seo-might-be-possible/).
 
 ### Relay Network
@@ -134,12 +135,13 @@ more.
 
 Backend services were all written in Clojure, frontends for portals
 and the actual Relay application used Backbone.js, Ruby was used for
-testing (RSpec) and automation/tasks (Rake), Ansible was starting to
-be used for service deployment.  Infrastructure was all hosted in AWS.
+testing (RSpec) and automation/tasks (Rake), Ansible was (at least
+starting to be) used for service deployment, and infrastructure was
+all hosted in AWS.
 
-The list of projects is quite long, but I had been involved with an
-overhaul of the internal file processing system for customer data
-management and messaging, a few brand new APIs, and 2-token IVR for
+The list of projects is quite long but includes an overhaul of the
+internal file processing system for customer data management and
+messaging, a few brand new client-facing APIs, and 2-token IVR for new
 member onboarding.
 
 ### SevOne
@@ -155,21 +157,21 @@ particularly with C++, PHP, and JavaScript (vanilla, ExtJS, jQuery). I also
 worked on diagnosing and fixing issues with appliance clustering (namely
 problems adding peers), licensing, browser compatibility, and MySQL replication.
 
-I returned to SevOne part time for the fall term and transferred to the Honey
-Badgers, who deal almost exclusively with fixing defects.
+After I returned, I transferred to the Honey Badgers, who dealt almost
+exclusively with fixing defects.
 
 ### Facebook
 
-In the summer of 2015, I was a Production Engineering intern at Facebook's
-headquarters in Menlo Park, CA. Here, I worked on the PE Mobile team on a few
-projects.
+In the summer of 2015, I was a Production Engineering intern at
+Facebook's headquarters in Menlo Park, CA. Here, I worked on the PE
+Mobile team on several projects.
 
-My main project was an automated (almost touchless) Android device provisioning
+My primary project was an automated (almost touchless) Android device provisioning
 tool. This tool is used for preparing devices out of the box for installation in
 the mobile device labs, performing tasks such as rooting the phone, installing a
 custom ROM, and making necessary configuration changes for remote access and
 management. By the summer's end this tool supported Nexus 4 and 5 (and
-theoretically any other reasonably open, i.e. not too locked down, device) and
+theoretically most other at-least-close-to-vanilla Android devices) and
 was used to provision a bunch of phones at the office and recently a bunch more
 *remotely* in the Prineville, Oregon datacenter.
 
@@ -181,9 +183,10 @@ dataset in order to reveal potential correlations between device performance and
 battery health. This was also a nice introduction to Chef through getting the
 tool deployed to the device host machines.
 
-The final project was a device lab status dashboard that displayed the layout of
-devices on the walls, their current health state, and various details on hover
-gathered from multiple data sources.
+The final project was a device lab status dashboard that displayed the
+layout of devices in their racks mounted on the walls, their current
+health state, and various other details gathered from multiple data
+sources.
 
 Python, PHP, and Hack were primary languages in use in this position. Mercurial
 was used as source control for most of the repositories I worked on and Phabricator
