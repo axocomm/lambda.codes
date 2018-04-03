@@ -98,15 +98,17 @@ B.S. Software Engineering, Drexel University (2011-2016, currently on hold)
 ### Picwell (present)
 
 At Picwell, I perform feature development and help out with DevOps for
-our Medicare plan recommendation platform. This involves extensive
-work in Python (most notably Flask and Pandas) as well as with Chef
-and AWS. Recent endeavors include improving service deployments,
-automating data ingestion and processing tasks, analyzing and
-producing reports of AEP and non-AEP API traffic, creating a tool and
-library for quick querying and retrieval of logs stored in
-Elasticsearch, and implementing a load testing solution using
-[Gatling](https://gatling.io/) which was subsequently used to evaluate
-API performance under various conditions.
+our Medicare plan recommendation platform. This primarily involves
+writing Python (most notably Flask and Pandas), Go, and Scala as well
+as working with Chef, AWS, and Jenkins.
+
+Recent endeavors include improving service deployments, automating
+data ingestion and processing tasks, analyzing and producing reports
+of AEP and non-AEP API traffic, creating a CLI tool and library for
+quick querying and retrieval of logs stored in Elasticsearch, and
+implementing a new load testing suite and tooling using
+[Gatling](https://gatling.io/), which was subsequently used to
+evaluate service performance under various conditions.
 
 ### ProTech Internet Group (present)
 
@@ -136,9 +138,8 @@ kinds, and more.
 
 Backend services were all written in Clojure, frontends for portals
 and the actual Relay application used Backbone.js, Ruby was used for
-testing (RSpec) and automation/tasks (Rake), Ansible was (at least
-starting to be) used for service deployment, and infrastructure was
-all hosted in AWS.
+testing (RSpec) and automation/tasks (Rake), Ansible was used for
+service deployment, and infrastructure was all hosted in AWS.
 
 The list of projects is quite long but includes an overhaul of the
 internal file processing system for customer data management and
