@@ -101,9 +101,12 @@ At Picwell, I perform feature development and help out with DevOps for
 our Medicare plan recommendation platform. This involves extensive
 work in Python (most notably Flask and Pandas) as well as with Chef
 and AWS. Recent endeavors include improving service deployments,
-automating data ingestion and processing tasks, implementing scoring
-and ranking algorithm changes, and integrating a Lambda-based logging
-solution for the API.
+automating data ingestion and processing tasks, analyzing and
+producing reports of AEP and non-AEP API traffic, creating a tool and
+library for quick querying and retrieval of logs stored in
+Elasticsearch, and implementing a load testing solution using
+[Gatling](https://gatling.io/) which was subsequently used to evaluate
+API performance under various conditions.
 
 ### ProTech Internet Group (present)
 
@@ -219,6 +222,13 @@ students, and began working on a thin client lab solution using
 
 ### AT&T Labs
 
-For the summer of my freshman year, I interned at AT&T in Middletown, NJ
-as a Summer IT intern. Here, I planned and developed an Android application
-using some of AT&T's (then) new mobile APIs.
+For the summer of my freshman year, I worked at AT&T in Middletown, NJ
+as a Summer IT intern. Here, I planned and developed an Android
+application using some of AT&T's (then) new mobile APIs.
+
+This summer program served as a dry run of the AT&T Summer Coding
+Challenge. This entailed ensuring that deadlines were realistic,
+projects were appropriate, and requirements were clear. It also
+involved implementing the project, for which I wrote a
+voice-controlled Reddit browser for Android using AT&T's Speech
+Recognition API.
