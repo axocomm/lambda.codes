@@ -1,22 +1,28 @@
-from flask import Flask, Markup, render_template, \
-    abort, send_from_directory, request
-
-from htmlmin.minify import html_minify
-
 import os
 import os.path
+
 import markdown
 import yaml
+from flask import (
+    Flask,
+    Markup,
+    render_template,
+    abort,
+    send_from_directory
+)
+from htmlmin.minify import html_minify
+
+RESOURCE_DIR = 'resources'
 
 app = Flask(
     __name__,
-    template_folder='resources/templates',
-    static_folder='resources/public'
+    template_folder=os.path.join(RESOURCE_DIR, 'templates'),
+    static_folder=os.path.join(RESOURCE_DIR, 'public')
 )
 
-app.config['PAGE_DIR'] = 'resources/pages'
+app.config['PAGE_DIR'] = os.path.join(RESOURCE_DIR, 'pages')
 
-NAVIGATION = 'resources/navigation.yml'
+NAVIGATION = os.path.join(RESOURCE_DIR, 'navigation.yml')
 
 
 def load_navigation(filename):
@@ -40,6 +46,9 @@ def get_navigation(base=None):
 
 
 def find_title(content):
+    """Try to find a page title using the first h1 in the Markdown
+    source.
+    """
     lines = content.split('\n')
     matches = [
         line for line in lines
@@ -70,7 +79,7 @@ def render_home():
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(
-        os.path.join(app.root_path, 'resources/public'),
+        os.path.join(app.root_path, RESOURCE_DIR, 'public'),
         'favicon.png'
     )
 
