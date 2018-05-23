@@ -48,4 +48,5 @@ working on multiple local development installations
 [GitHub](https://github.com/axocomm/racknews2)<br>
 A simple RackTables API and reporting tool
 
-Most of these are perpetually WIP. More to come soon (hopefully).
+Most of these are perpetually WIP and others unfortunately private for
+now. More to come soon (hopefully).

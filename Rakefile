@@ -59,7 +59,7 @@ namespace :dev do
   desc 'Start local Flask'
   task :run do
     config = get_config :development
-    sh "PAGE_DIR=#{config[:page_dir]} python -m app"
+    sh "DEBUG=true PAGE_DIR=#{config[:page_dir]} python -m app"
   end
 
   desc 'Build and run local Docker container'

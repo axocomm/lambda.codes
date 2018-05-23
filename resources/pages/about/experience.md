@@ -22,8 +22,9 @@
 <li>Common Lisp</li>
 <li>Haskell</li>
 <li>Kotlin</li>
+<li>Scala</li>
 <li>HTML</li>
-<li>CSS</li>
+<li>CSS/SCSS</li>
 <li>JavaScript</li>
 <li>LaTeX</li>
 </ul>
@@ -37,7 +38,6 @@
 <ul>
 <li>Emacs</li>
 <li>Git</li>
-<li>Mercurial</li>
 <li>MySQL</li>
 <li>PostgreSQL</li>
 <li>MongoDB</li>
@@ -47,8 +47,6 @@
 <ul>
 <li>Android SDK</li>
 <li>Vagrant</li>
-<li>JIRA</li>
-<li>Phabricator</li>
 <li>Docker</li>
 <li>Jenkins</li>
 </ul>
@@ -60,34 +58,37 @@
 <div class="row" id="language-list">
 <div class="one-half first">
 <ul>
-<li>Nginx</li>
-<li>Apache</li>
+<li>Nginx/Apache</li>
 <li>Puppet</li>
 <li>Chef</li>
 <li>Ansible</li>
+<li>RackTables</li>
 </ul>
 </div>
 <div class="one-half">
 <ul>
-<li>RackTables</li>
 <li>Nagios</li>
 <li>Proxmox</li>
 <li>SevOne NMS</li>
 <li>AWS</li>
+<li>Google Cloud</li>
 </ul>
 </div>
 </div>
 
-### Backend Frameworks
+### Frameworks
+
+#### Backend
 
 + CakePHP
 + Ruby on Rails
 + Flask
 
-### Frontend Frameworks
+#### Frontend
 
 + Vue.js
 + Backbone.js
++ React/Reagent
 
 ## Education
 
@@ -104,11 +105,12 @@ as working with Chef, AWS, and Jenkins.
 
 Recent endeavors include improving service deployments, automating
 data ingestion and processing tasks, analyzing and producing reports
-of AEP and non-AEP API traffic, creating a CLI tool and library for
-quick querying and retrieval of logs stored in Elasticsearch, and
-implementing a new load testing suite and tooling using
-[Gatling](https://gatling.io/), which was subsequently used to
-evaluate service performance under various conditions.
+of AEP (Medicare annual election period) and non-AEP API traffic,
+creating a CLI tool and Python library for quick querying and
+retrieval of logs stored in Elasticsearch, and implementing a new load
+testing suite and tooling using [Gatling](https://gatling.io/), which
+was subsequently used to evaluate service performance under various
+conditions.
 
 ### ProTech Internet Group (present)
 
@@ -216,11 +218,11 @@ replication, AWS, and Plack.
 ### Drexel University College of Computing and Informatics
 
 Prior to and for my first co-op, I worked with the system
-administrator at the Department of Computer Science maintaining lab
-hardware, server installation and configuration, and plenty of work
-with RackTables, Nagios, and Puppet. I also provided technical support
-to faculty and students, and began working on a thin client lab
-solution using [LTSP](http://ltsp.org/).
+administrator at the Department of Computer Science on maintaining CS
+and Math department hardware; server installation and configuration;
+and management with RackTables, Nagios, and Puppet. I also provided
+technical support to faculty and students, and began working on a thin
+client lab solution using [LTSP](http://ltsp.org/).
 
 ### AT&T Labs
 

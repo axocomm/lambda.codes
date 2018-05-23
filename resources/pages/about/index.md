@@ -11,4 +11,5 @@ recommendation platform. Aside from work and projects, I enjoy playing
 bass guitar, smoking my pipe, and wandering around the city.
 
 For more information, feel free to have a look at my
-[experience](/about/experience) and a few [projects](/projects).
+[experience](/about/experience), a few [projects](/projects), or
+my [full r&eacute;sum&eacute;](https://www.cs.drexel.edu/~tm/assets/files/resume.pdf).

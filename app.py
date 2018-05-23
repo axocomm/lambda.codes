@@ -13,16 +13,15 @@ from flask import (
 from htmlmin.minify import html_minify
 
 RESOURCE_DIR = 'resources'
+PAGE_DIR = os.path.join(RESOURCE_DIR, 'pages')
+NAVIGATION = os.path.join(RESOURCE_DIR, 'navigation.yml')
 
 app = Flask(
     __name__,
     template_folder=os.path.join(RESOURCE_DIR, 'templates'),
     static_folder=os.path.join(RESOURCE_DIR, 'public')
 )
-
-app.config['PAGE_DIR'] = os.path.join(RESOURCE_DIR, 'pages')
-
-NAVIGATION = os.path.join(RESOURCE_DIR, 'navigation.yml')
+app.config['PAGE_DIR'] = os.environ.get('PAGE_DIR', PAGE_DIR)
 
 
 def load_navigation(filename):
@@ -122,7 +121,6 @@ def render_404(error):
 
 
 if __name__ == '__main__':
-    if 'PAGE_DIR' in os.environ:
-        app.config['PAGE_DIR'] = os.environ['PAGE_DIR']
-    debug = 'DEBUG' in os.environ and os.environ['DEBUG']
-    app.run(debug=debug, host='0.0.0.0')
+    port = os.environ.get('PORT', 5000)
+    debug = os.environ.get('DEBUG', False)
+    app.run(debug=debug, host='0.0.0.0', port=port)
