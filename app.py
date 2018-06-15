@@ -12,35 +12,46 @@ from flask import (
 )
 from htmlmin.minify import html_minify
 
-RESOURCE_DIR = 'resources'
+RESOURCE_DIR = os.path.join(os.getcwd(), 'resources')
 PAGE_DIR = os.path.join(RESOURCE_DIR, 'pages')
 NAVIGATION = os.path.join(RESOURCE_DIR, 'navigation.yml')
 
-app = Flask(
+
+class XyzyApp(Flask):
+    def __init__(self, import_name, **kwargs):
+        super(XyzyApp, self).__init__(import_name, **kwargs)
+        self.nav_items = XyzyApp._load_navigation(NAVIGATION)
+
+    @property
+    def page_dir(self):
+        return self.config.get('PAGE_DIR')
+
+    @staticmethod
+    def _load_navigation(filename):
+        with open(filename) as fh:
+            return yaml.load(fh.read())
+        return []
+
+
+app = XyzyApp(
     __name__,
     template_folder=os.path.join(RESOURCE_DIR, 'templates'),
     static_folder=os.path.join(RESOURCE_DIR, 'public')
 )
+
 app.config['PAGE_DIR'] = os.environ.get('PAGE_DIR', PAGE_DIR)
-
-
-def load_navigation(filename):
-    with open(filename) as fh:
-        return yaml.load(fh.read())
-    return []
 
 
 def get_navigation(base=None):
     """Get navigation items and add `active` class
     to current page.
     """
-    navigation = load_navigation(NAVIGATION)
     if not base:
-        return navigation
+        return app.nav_items
 
     return [
         dict(item, **{'active': item['name'] == base})
-        for item in navigation
+        for item in app.nav_items
     ]
 
 
@@ -85,8 +96,7 @@ def favicon():
 
 @app.route('/<path:page>')
 def render_page(page):
-    page_dir = app.config['PAGE_DIR']
-    path = os.path.join(page_dir, page)
+    path = os.path.join(app.page_dir, page)
 
     if os.path.isdir(path):
         filename = os.path.join(path, 'index.md')
