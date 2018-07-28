@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" id="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>{% if title %}{{ title }} :: {% endif %}xyzy</title>
+    <title>{% if title %}{{ title }} :: {% endif %}{{ site_title }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   </head>
@@ -13,7 +13,7 @@
         <a href="/">
           <i class="fa fa-fw fa-paw"></i>
         </a>
-        <span class="site-title">xyzy</span>
+        <span class="site-title">{{ site_title }}</span>
       </div>
       <nav id="inner-nav">
         <ul>

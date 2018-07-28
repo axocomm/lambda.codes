@@ -21,6 +21,8 @@ NAVIGATION = os.path.join(RESOURCE_DIR, 'navigation.yml')
 class XyzyApp(Flask):
     def __init__(self, import_name, **kwargs):
         super(XyzyApp, self).__init__(import_name, **kwargs)
+        self.site_title = 'xyzy'
+
         self._nav_items = XyzyApp._load_navigation(NAVIGATION)
 
     def render(self, template, **kwargs):
@@ -45,8 +47,8 @@ class XyzyApp(Flask):
     def _page_options(self):
         """Generate some extra options for template rendering.
 
-        Right now this just includes navigation with the current item
-        (ascertained from the request path) marked active.
+        This includes marking the appropriate navigation item as
+        active and passing the site_title to the template.
         """
         page_base = request.path.lstrip('/').split('/')[0]
         page_nav = [
@@ -54,7 +56,7 @@ class XyzyApp(Flask):
             for item in self._nav_items
         ]
 
-        return {'navigation': page_nav}
+        return {'navigation': page_nav, 'site_title': self.site_title}
 
     @staticmethod
     def _load_navigation(filename):
