@@ -7,23 +7,54 @@ from flask import (
     Markup,
     render_template,
     abort,
-    send_from_directory
+    send_from_directory,
+    request
 )
 from htmlmin.minify import html_minify
 
 RESOURCE_DIR = os.path.join(os.getcwd(), 'resources')
 PAGE_DIR = os.path.join(RESOURCE_DIR, 'pages')
+ASSET_DIR = os.path.join(RESOURCE_DIR, 'public')
 NAVIGATION = os.path.join(RESOURCE_DIR, 'navigation.yml')
 
 
 class XyzyApp(Flask):
     def __init__(self, import_name, **kwargs):
         super(XyzyApp, self).__init__(import_name, **kwargs)
-        self.nav_items = XyzyApp._load_navigation(NAVIGATION)
+        self._nav_items = XyzyApp._load_navigation(NAVIGATION)
+
+    def render(self, template, **kwargs):
+        """Render a template.
+
+        This simply wraps Flask's render_template with a few extras:
+          - Minifies content if not in debug mode
+          - Includes navigation items with the base item marked active
+        """
+        html = render_template(
+            template,
+            **dict(kwargs, **self._page_options)
+        )
+
+        return html_minify(html) if not self.debug else html
 
     @property
     def page_dir(self):
         return self.config.get('PAGE_DIR')
+
+    @property
+    def _page_options(self):
+        """Generate some extra options for template rendering.
+
+        Right now this just includes navigation with the current item
+        (ascertained from the request path) marked active.
+        """
+        page_base = request.path.lstrip('/').split('/')[0]
+        page_nav = [
+            dict(item, **{'active': item['name'] == page_base})
+            for item in self._nav_items
+        ]
+
+        return {'navigation': page_nav}
 
     @staticmethod
     def _load_navigation(filename):
@@ -35,23 +66,10 @@ class XyzyApp(Flask):
 app = XyzyApp(
     __name__,
     template_folder=os.path.join(RESOURCE_DIR, 'templates'),
-    static_folder=os.path.join(RESOURCE_DIR, 'public')
+    static_folder=ASSET_DIR
 )
 
 app.config['PAGE_DIR'] = os.environ.get('PAGE_DIR', PAGE_DIR)
-
-
-def get_navigation(base=None):
-    """Get navigation items and add `active` class
-    to current page.
-    """
-    if not base:
-        return app.nav_items
-
-    return [
-        dict(item, **{'active': item['name'] == base})
-        for item in app.nav_items
-    ]
 
 
 def find_title(content):
@@ -70,27 +88,14 @@ def find_title(content):
         return matches[0].lstrip('# ')
 
 
-def render_content(content):
-    """Render the given content, minified unless `app.debug` is set."""
-    return html_minify(content) if not app.debug else content
-
-
 @app.route('/')
 def render_home():
-    rendered = render_template(
-        'home.html',
-        navigation=get_navigation()
-    )
-
-    return render_content(rendered)
+    return app.render('home.html')
 
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory(
-        os.path.join(app.root_path, RESOURCE_DIR, 'public'),
-        'favicon.png'
-    )
+    return send_from_directory(ASSET_DIR, 'favicon.png')
 
 
 @app.route('/<path:page>')
@@ -109,24 +114,12 @@ def render_page(page):
         file_content = fh.read()
         title = find_title(file_content)
         content = Markup(markdown.markdown(file_content))
-        base = page.split('/')[0]
-        rendered = render_template(
-            'page.html',
-            content=content,
-            navigation=get_navigation(base),
-            title=title
-        )
-
-        return render_content(rendered)
+        return app.render('page.html', content=content, title=title)
 
 
 @app.errorhandler(404)
 def render_404(error):
-    return render_template(
-        'error.html',
-        error=error,
-        navigation=get_navigation()
-    ), 404
+    return app.render('error.html', error=error), 404
 
 
 if __name__ == '__main__':
