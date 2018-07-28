@@ -16,7 +16,7 @@ p {
   margin-bottom: 20px;
 }
 
-a {
+body:not(.home) a {
   @include link-underline(#fff, $body-color, $selection-bg);
   &:hover {
     color: lighten($body-color, 30%);
