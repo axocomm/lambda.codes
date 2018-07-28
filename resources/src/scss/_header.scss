@@ -22,11 +22,15 @@ nav#main ul li a,
 #site-logo a,
 #home-nav-items li a {
   font-size: 24px;
-  padding: 10px 5px 12px 10px;
+  padding: 10px 5px 10px 10px;
   text-decoration: none;
   color: #000;
   margin-right: 20px;
   background: none;
+}
+
+#site-logo a {
+  padding-right: 9.5px;
 }
 
 nav#main ul li a i,
