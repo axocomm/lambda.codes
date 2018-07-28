@@ -22,10 +22,11 @@ def get_config(environment)
   raise "#{file} doesn't exist" unless File.exists?(file)
   File.open(file) do |fh|
     conf = YAML.load(fh.read).symbolize
-    dc = conf[:deploy] or raise "Missing 'deploy' in configuration"
 
-    raise "Invalid environment #{environment}" unless dc.include?(environment)
-    dc[environment]
+    env_config = conf[:environments]
+    raise "Missing 'environments' in configuration" if env_config.nil?
+
+    env_config[environment] or raise "Invalid environment #{environment}"
   end
 end
 
@@ -68,43 +69,6 @@ namespace :dev do
          'docker:build',
          'docker:run'
        ]
-end
-
-desc 'Deploy to remote Docker container'
-task :deploy => 'gulp:build' do
-  host = $config[:host]
-  user = $config[:user]
-  remote_path = $config[:remote_path]
-  options = {
-    :verbose => :error,
-    :port    => $config[:ssh_port]
-  }
-
-  cmd = <<-EOT
-    rsync -rave 'ssh -p#{$config[:ssh_port]}' \
-      --exclude='.git/' \
-      --exclude='venv/' \
-      --exclude='__pycache__/' \
-      --exclude='node_modules/' \
-      . #{user}@#{host}:#{remote_path}
-  EOT
-
-  sh cmd
-
-  prefix = "cd #{remote_path} && ENVIRONMENT=#{ENV['ENVIRONMENT']}"
-
-  commands = [
-    'bundle install --deployment',
-    'bundle exec rake docker:build',
-    'bundle exec rake docker:stop',
-    'bundle exec rake docker:rm',
-    'bundle exec rake docker:run'
-  ].map { |c| "#{prefix} #{c}" }
-
-  Net::SSH.start(host, user, options) do |ssh|
-    commands.each { |c| puts ssh.exec!(c) }
-    ssh.loop
-  end
 end
 
 desc 'Synchronize current pages to remote'

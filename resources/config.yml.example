@@ -1,5 +1,5 @@
 ---
-deploy:
+environments:
   staging:
     host: www.dev.xyzyxyzy.xyz
     user: deploy
