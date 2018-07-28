@@ -3,12 +3,12 @@ header {
   position: fixed;
 }
 
-nav#main ul,
-nav#main ul li {
+#inner-nav ul,
+#inner-nav ul li {
   list-style-type: none;
 }
 
-nav#main ul li,
+#inner-nav ul li,
 #site-logo {
   text-transform: lowercase;
   margin-top: 10px;
@@ -29,22 +29,22 @@ nav#main ul li,
   }
 }
 
-nav#main ul li:hover a,
+#inner-nav ul li:hover a,
 #site-logo a {
   color: #fff;
   background-color: #000;
 }
 
-nav#main ul li.active a {
+#inner-nav ul li.active a {
   border-left: 5px solid #000;
   padding-left: 5px;
 }
 
-nav#main ul li span.item-title {
+#inner-nav ul li span.item-title {
   display: none;
 }
 
-nav#main ul li:hover span.item-title,
+#inner-nav ul li:hover span.item-title,
 #site-logo .site-title {
   display: inline;
   cursor: default;
