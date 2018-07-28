@@ -147,19 +147,11 @@ as follows:
 
 1. Clone this repository
 
-2. Install NPM requirements
-
-    `npm i`
-
-3. Build frontend assets
-
-    `gulp build`
-
-4. Build the Docker image specified in the `Dockerfile`
+2. Build the Docker image specified in the `Dockerfile`
 
     `docker build -t xyzy-site:latest .`
 
-5. Run the Docker container
+3. Run the Docker container
 
     ```
     docker run \

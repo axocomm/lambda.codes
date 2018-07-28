@@ -4,10 +4,7 @@ repo_dir = '/home/deploy/xyzy-site'
 
 clone_repository 'git@github.com:axocomm/xyzy-site',
                  target: repo_dir,
-                 branch: 'master'
-
-run_command 'npm i', cwd: repo_dir
-run_command 'gulp build', cwd: repo_dir
+                 branch: 'dev'
 
 build_docker_image 'xyzy-site',
                    path: repo_dir
