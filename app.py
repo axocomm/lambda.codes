@@ -115,7 +115,10 @@ def render_page(page):
     with open(filename) as fh:
         file_content = fh.read()
         title = find_title(file_content)
-        content = Markup(markdown.markdown(file_content))
+        content = Markup(markdown.markdown(
+            file_content,
+            extensions=['markdown.extensions.fenced_code']
+        ))
         return app.render('page.html', content=content, title=title)
 
 
