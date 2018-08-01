@@ -6,6 +6,7 @@
     <title>{% if title %}{{ title }} :: {% endif %}{{ site_title }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/css/highlight.css') }}">
   </head>
   <body>
     <header>
@@ -29,5 +30,7 @@
       </nav>
     </header>
     {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='vendor/js/highlight.pack.js') }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
