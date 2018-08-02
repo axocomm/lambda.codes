@@ -125,8 +125,11 @@ def render_page(page):
 
 
 @app.errorhandler(404)
-def render_404(error):
-    return app.render('error.html', error=error), 404
+def render_404(_):
+    return app.render(
+        'error.html',
+        error='That page does not seem to exist.'
+    ), 404
 
 
 if __name__ == '__main__':
