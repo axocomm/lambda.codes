@@ -16,7 +16,7 @@ p {
   margin-bottom: 20px;
 }
 
-a {
+body:not(.home) a {
   @include link-underline(#fff, $body-color, $selection-bg);
   &:hover {
     color: lighten($body-color, 30%);
@@ -25,8 +25,16 @@ a {
 
 code,
 pre {
-  font-family: 'Oxygen Mono', monospace;
+  font-family: $mono-font;
   font-size: 14px;
+}
+
+code[class] {
+  padding-left: 20px;
+}
+
+pre {
+  margin-bottom: 20px;
 }
 
 ul,

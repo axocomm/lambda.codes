@@ -12,12 +12,14 @@ function onNavItemHover($el) {
   fadeTitle(itemTitle);
 };
 
-$(function () {
-  if ($(window).width() > 600) {
-    $('#home-nav-items > li').mouseover(function () {
-      onNavItemHover($(this));
-    }).mouseout(function () {
-      fadeTitle('xyzy');
-    });
-  }
-});
+function setupHomeHover(siteTitle) {
+  $(function () {
+    if ($(window).width() > 600) {
+      $('#home-nav-items > li').mouseover(function () {
+        onNavItemHover($(this));
+      }).mouseout(function () {
+        fadeTitle(siteTitle);
+      });
+    }
+  });
+}

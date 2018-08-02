@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import unittest
 
 import app as xyzy
@@ -14,7 +16,7 @@ class XyzyAppTestCase(unittest.TestCase):
         rv = self.app.get('/')
 
         assert rv.status == '200 OK'
-        assert b'<h1 id="home-title">xyzy</h1>' in rv.data
+        assert bytes('<h1 id="home-title">λ.codes</h1>', 'UTF-8') in rv.data
 
     def test_page_renders_from_file(self):
         """The app should be able to render a Markdown file."""
@@ -39,14 +41,14 @@ class XyzyAppTestCase(unittest.TestCase):
         rv = self.app.get('/nothing')
         assert rv.status == '404 NOT FOUND'
         assert b'<h1>Error</h1>' in rv.data
-        assert b'404: Not Found' in rv.data
+        assert b'That page does not seem to exist' in rv.data
 
     def test_minification_without_debug(self):
         """HTML Minification should occur if not in debug mode."""
         xyzy.app.debug = False
         rv = self.app.get('/')
         assert rv.status == '200 OK'
-        assert '<!DOCTYPE html><html><head><meta charset="utf-8"/>' in rv.data
+        assert b'<!DOCTYPE html><html><head><meta charset="utf-8"/>' in rv.data
 
     def test_minification_with_debug(self):
         """HTML minification should not occur if in debug mode."""

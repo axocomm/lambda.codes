@@ -8,10 +8,11 @@
 <div class="one-half first">
 <ul>
 <li>Clojure/ClojureScript</li>
-<li>PHP/Hack</li>
-<li>Python</li>
-<li>Java</li>
 <li>Ruby</li>
+<li>Python</li>
+<li>PHP/Hack</li>
+<li>Go</li>
+<li>Java</li>
 <li>Perl</li>
 <li>Bash</li>
 <li>C/C++</li>

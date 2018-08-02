@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" id="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>{% if title %}{{ title }} :: {% endif %}xyzy</title>
+    <title>{% if title %}{{ title }} :: {% endif %}{{ site_title }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans|Oxygen+Mono">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/css/highlight.css') }}">
   </head>
   <body>
     <header>
@@ -14,9 +14,9 @@
         <a href="/">
           <i class="fa fa-fw fa-paw"></i>
         </a>
-        <span class="site-title">xyzy</span>
+        <span class="site-title">{{ site_title }}</span>
       </div>
-      <nav id="main">
+      <nav id="inner-nav">
         <ul>
           {% for item in navigation %}
           <li class="nav-{{ item.name }}{% if item.active %} active{% endif %}">
@@ -30,5 +30,7 @@
       </nav>
     </header>
     {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='vendor/js/highlight.pack.js') }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

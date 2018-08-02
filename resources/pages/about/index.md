@@ -3,7 +3,7 @@
 Hello. My name is Trevor, and I am a software engineer focusing on
 backend web development, DevOps, and some Unix system
 administration. I grew up at the Jersey Shore and currently reside in
-the Fairmount section of Philadelphia.
+the Fairmount section of Philadelphia with Fizzbin the cat.
 
 I am currently happily employed at Philadelphia startup Picwell, where
 I help out with DevOps and feature development for our Medicare plan

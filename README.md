@@ -1,6 +1,6 @@
-# xyzyxyzy.xyz
+# lambda.codes
 
-This is the source for [my website](https://xyzyxyzy.xyz) and is just
+This is the source for [my website](https://lambda.codes) and is just
 a simple Flask application that renders Markdown files.
 
 ## How it Works
@@ -147,27 +147,19 @@ as follows:
 
 1. Clone this repository
 
-2. Install NPM requirements
+2. Build the Docker image specified in the `Dockerfile`
 
-    `npm i`
+    `docker build -t lambda-codes:latest .`
 
-3. Build frontend assets
-
-    `gulp build`
-
-4. Build the Docker image specified in the `Dockerfile`
-
-    `docker build -t xyzy-site:latest .`
-
-5. Run the Docker container
+3. Run the Docker container
 
     ```
     docker run \
       -d \
-      --name xyzy-site \
+      --name lambda-codes \
       -p 5000:5000 \
       -v $(pwd)/resources/pages:/pages \
-      xyzy-site:latest
+      lambda-codes:latest
     ```
 
 ### Nginx
@@ -178,12 +170,12 @@ example:
 ``` nginx
 server {
   listen 80;
-  server_name xyzyxyzy.xyz;
+  server_name lambda.codes;
 
   expires 31d;
 
-  access_log /var/log/nginx/xyzyxyzy.xyz.access.log;
-  error_log /var/log/nginx/xyzyxyzy.xyz.error.log info;
+  access_log /var/log/nginx/lambda.codes.access.log;
+  error_log /var/log/nginx/lambda.codes.error.log info;
 
   location / {
     proxy_pass http://localhost:5000;
@@ -193,7 +185,7 @@ server {
     proxy_redirect off;
   }
 
-  root /www/xyzyxyzy.xyz;
+  root /www/lambda.codes;
   index index.html;
 }
 ```

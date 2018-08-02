@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" id="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>xyzy</title>
+    <title>{{ site_title }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans|Oxygen+Mono">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
@@ -11,7 +11,7 @@
   <body class="home">
     <div id="home-nav-container">
       <nav id="home-nav">
-        <h1 id="home-title">xyzy</h1>
+        <h1 id="home-title">{{ site_title }}</h1>
         <ul id="home-nav-items">
           {% for item in navigation %}
           <li class="home-nav-{{ item.name }}"
@@ -31,5 +31,8 @@
     {% block content %}{% endblock %}
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/home-nav.js') }}"></script>
+    <script>
+     setupHomeHover('{{ site_title }}');
+    </script>
   </body>
 </html>

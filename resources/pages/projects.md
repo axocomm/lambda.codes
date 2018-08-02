@@ -1,8 +1,8 @@
 # Selected Projects
 
-### xyzyxyzy.xyz
+### lambda.codes
 
-[GitHub](https://github.com/axocomm/xyzy-site)<br>
+[GitHub](https://github.com/axocomm/lambda.codes)<br>
 This site is a simple Flask application that renders pages from Markdown files.
 It is running inside a Docker container hosted by Debian.
 
@@ -12,15 +12,32 @@ come courtesy of [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
 
 ### lcdeploy
 
-[GitHub](https://github.com/axocomm/lcdeploy)<br>
-This is a Ruby Gem that allows deployments to
-be specified using a number of straightforward step helper functions
-(`create_directory`, `copy_file`, `clone_repository`, etc.) and other
-Ruby code in an [`lcdfile`](https://github.com/axocomm/xyzy-site/blob/master/lcdfile).
+[GitHub](https://github.com/axocomm/lcdeploy)<br> This is a Ruby gem
+that allows deployments to be specified using a number of
+straightforward step helper functions (`create_directory`,
+`copy_file`, `clone_repository`, etc.) and other Ruby code in an
+[`lcdfile`](https://github.com/axocomm/lambda.codes/blob/master/lcdfile).
 It tries to be a little more robust than using `Rakefile`s or shell
 scripts without getting to the level of Chef or Ansible and
 facilitates deploys of basic applications from individual project
-directories using a single file.
+directories using a single file. This will be getting rewritten at
+some point.
+
+### rupervisor
+
+[GitHub](https://github.com/axocomm/rupervisor)<br>
+This is another Ruby gem that provides a DSL for defining simple
+pipelines. These pipelines can involve more or less any command and
+supports taking actions based on return code, dynamic population of
+arguments, configurable retries, and more.
+
+### nago
+
+Nago is a system/service monitoring utility similar to Nagios. Through
+the use of a small agent program, various checks (e.g. CPU load,
+Docker containers running, etc.) can be enabled and run on registered
+machines. Check results are saved (and preserved with configurable
+retention time) to a Redis database for viewing on a dashboard.
 
 ### vagrant-wordpress
 
