@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import os
 
 import markdown
@@ -21,7 +23,7 @@ NAVIGATION = os.path.join(RESOURCE_DIR, 'navigation.yml')
 class XyzyApp(Flask):
     def __init__(self, import_name, **kwargs):
         super(XyzyApp, self).__init__(import_name, **kwargs)
-        self.site_title = 'xyzy'
+        self.site_title = 'λ.codes'
 
         self._nav_items = XyzyApp._load_navigation(NAVIGATION)
 
