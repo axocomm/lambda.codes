@@ -2,8 +2,8 @@ require 'net/ssh'
 require 'yaml'
 
 PORT = (ENV['PORT'] || 5000).freeze
-IMAGE_NAME = 'xyzy-min'.freeze
-REPO = 'git@gitlab.com:axocomm/xyzy-min.git'.freeze
+IMAGE_NAME = 'lambda-codes'.freeze
+REPO = 'git@github.com:axocomm/lambda.codes'.freeze
 CONFIG = 'resources/config.yml'.freeze
 
 class Hash

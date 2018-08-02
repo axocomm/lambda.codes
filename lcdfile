@@ -1,15 +1,15 @@
 configure from_json: 'resources/site-config.json'
 
-repo_dir = '/home/deploy/xyzy-site'
+repo_dir = '/home/deploy/lambda.codes'
 
-clone_repository 'git@github.com:axocomm/xyzy-site',
+clone_repository 'git@github.com:axocomm/lambda.codes',
                  target: repo_dir,
                  branch: 'dev'
 
-build_docker_image 'xyzy-site',
+build_docker_image 'lambda-codes',
                    path: repo_dir
 
-run_docker_container 'xyzy-site',
-                     image: 'xyzy-site',
+run_docker_container 'lambda-codes',
+                     image: 'lambda-codes',
                      ports: [[5000, 5000]],
                      volumes: [["#{repo_dir}/resources/pages", '/pages']]
