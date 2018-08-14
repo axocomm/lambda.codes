@@ -3,25 +3,25 @@
 ### lambda.codes
 
 [GitHub](https://github.com/axocomm/lambda.codes)<br>
-This site is a simple Flask application that renders pages from Markdown files.
-It is running inside a Docker container hosted by Debian.
+This site is a simple Flask application that renders pages from
+Markdown files.  It lives inside a Docker container running on Fedora
+Server.
 
 Styles are from scratch but do start with the
 [CSS Reset](http://meyerweb.com/eric/tools/css/reset/). Navigation icons
-come courtesy of [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
+come courtesy of [Font Awesome](https://fontawesome.com).
 
 ### lcdeploy
 
-[GitHub](https://github.com/axocomm/lcdeploy)<br> This is a Ruby gem
-that allows deployments to be specified using a number of
-straightforward step helper functions (`create_directory`,
+[GitHub](https://github.com/axocomm/lcdeploy)<br>
+This is a Ruby gem that allows deployments to be specified using a
+number of straightforward step helper functions (`create_directory`,
 `copy_file`, `clone_repository`, etc.) and other Ruby code in an
 [`lcdfile`](https://github.com/axocomm/lambda.codes/blob/master/lcdfile).
 It tries to be a little more robust than using `Rakefile`s or shell
 scripts without getting to the level of Chef or Ansible and
 facilitates deploys of basic applications from individual project
-directories using a single file. This will be getting rewritten at
-some point.
+directories using a single file. This is currently getting overhauled.
 
 ### rupervisor
 
@@ -42,8 +42,8 @@ retention time) to a Redis database for viewing on a dashboard.
 ### vagrant-wordpress
 
 [GitHub](https://github.com/axocomm/vagrant-wordpress)<br>
-A Vagrant setup that aims to provide quick and easy access to a LEMP stack and
-ready-to-use WordPress installation for local development
+A Vagrant setup that aims to provide quick and easy access to a LEMP
+stack and ready-to-use WordPress installation for local development
 
 ### puff-puff-dash
 
@@ -57,8 +57,8 @@ directly with the APIs of SoundCloud, Reddit, YouTube, and more.
 ### wp-docker-dev
 
 [GitHub](https://github.com/axocomm/wp-docker-dev)<br>
-A simple Docker-based WordPress setup that provides an easy-to-use environment for
-working on multiple local development installations
+A simple Docker-based WordPress setup that provides an easy-to-use
+environment for working on multiple local development installations
 
 ### racknews
 

@@ -100,18 +100,17 @@ B.S. Software Engineering, Drexel University (2011-2016, currently on hold)
 ### Picwell (present)
 
 At Picwell, I perform feature development and help out with DevOps for
-our Medicare plan recommendation platform. This primarily involves
+our health care plan recommendation platform. This primarily involves
 writing Python (most notably Flask and Pandas), Go, and Scala as well
 as working with Chef, AWS, and Jenkins.
 
 Recent endeavors include improving service deployments, automating
 data ingestion and processing tasks, analyzing and producing reports
 of AEP (Medicare annual election period) and non-AEP API traffic,
-creating a CLI tool and Python library for quick querying and
-retrieval of logs stored in Elasticsearch, and implementing a new load
-testing suite and tooling using [Gatling](https://gatling.io/), which
-was subsequently used to evaluate service performance under various
-conditions.
+designing and building brand new versions of several services, and
+implementing a new load testing suite and tooling using
+[Gatling](https://gatling.io/), which was subsequently used to
+evaluate application performance under various conditions.
 
 ### ProTech Internet Group (present)
 
@@ -123,7 +122,7 @@ projects include support and development for a custom eCommerce
 platform, a comprehensive online shopping research tool leveraging
 [Scrapy](https://scrapy.org/) and [Pandas](http://pandas.pydata.org/),
 a third-party media platform integration plugin for WordPress, and an
-Android application for a YC-backed startup.
+Android application for a Y Combinator startup.
 
 I also work on maintaining infrastructure, building internal tools,
 and much more. In late 2015, I was even involved in an [SEO keyword
