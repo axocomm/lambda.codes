@@ -88,29 +88,31 @@
 #### Frontend
 
 + Vue.js
-+ Backbone.js
 + React/Reagent
 
 ## Education
 
-B.S. Software Engineering, Drexel University (2011-2016, currently on hold)
+B.S. Software Engineering, Drexel University (2011-2016, currently on hiatus)
 
 ## Employment History
 
-### Picwell (present)
+### SevOne (present)
 
-At Picwell, I perform feature development and help out with DevOps for
-our health care plan recommendation platform. This primarily involves
-writing Python (most notably Flask and Pandas), Go, and Scala as well
-as working with Chef, AWS, and Jenkins.
+SevOne began as my second co-op with Drexel and continued part time
+through the fall and winter of 2014-2015 before leaving for Vimbly. I
+resumed briefly after returning from California, and after several
+years recently returned (having finally shed "intern" from my title).
 
-Recent endeavors include improving service deployments, automating
-data ingestion and processing tasks, analyzing and producing reports
-of AEP (Medicare annual election period) and non-AEP API traffic,
-designing and building brand new versions of several services, and
-implementing a new load testing suite and tooling using
-[Gatling](https://gatling.io/), which was subsequently used to
-evaluate application performance under various conditions.
+As an intern, I primarily took on tasks related to the web application
+component and reporting framework of SevOne NMS, particularly with
+C++, PHP, and JavaScript (vanilla, ExtJS, jQuery). I also worked on
+diagnosing and fixing issues with appliance clustering (namely
+problems adding peers), licensing, browser compatibility, and MySQL
+replication.
+
+While my current position and focus is _technically_ the same, given
+the three year hiatus I'm expecting (and eagerly awaiting) some
+interesting changes and will update this section accordingly.
 
 ### ProTech Internet Group (present)
 
@@ -131,6 +133,21 @@ search results that was even written about in a few different
 publications, including
 [TechCrunch](http://techcrunch.com/2016/02/12/study-says-data-driven-seo-might-be-possible/).
 
+### Picwell
+
+At Picwell, I performed feature development and helped out with DevOps
+for our health care plan recommendation platform. This primarily
+involved writing Python (most notably Flask and Pandas), Go, and Scala
+as well as working with Chef, AWS, and Jenkins.
+
+Recent endeavors included improving service deployments, automating
+data ingestion and processing tasks, analyzing and producing reports
+of AEP (Medicare annual election period) and non-AEP API traffic,
+designing and building brand new versions of several services, and
+implementing a new load testing suite and tooling using
+[Gatling](https://gatling.io/), which was subsequently used to
+evaluate application performance under various conditions.
+
 ### Relay Network
 
 At Relay Network, I was a full stack developer working primarily with
@@ -147,23 +164,6 @@ The list of projects is quite long but includes an overhaul of the
 internal file processing system for customer data management and
 messaging, a few brand new client-facing APIs, and 2-token IVR for new
 member onboarding.
-
-### SevOne
-
-SevOne began as my second co-op with Drexel and continued part time
-through the fall and winter before leaving for Vimbly. I resumed
-briefly in Fall of 2015.
-
-For the first year, I worked on the Dragon Slayers investigating
-escalated support tickets and identifying and fixing defects. I
-primarily took on tasks related to the web application component and
-reporting framework of SevOne NMS, particularly with C++, PHP, and
-JavaScript (vanilla, ExtJS, jQuery). I also worked on diagnosing and
-fixing issues with appliance clustering (namely problems adding
-peers), licensing, browser compatibility, and MySQL replication.
-
-After I returned, I transferred to the Honey Badgers, who dealt almost
-exclusively with fixing defects.
 
 ### Facebook
 
