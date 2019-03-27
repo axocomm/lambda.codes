@@ -110,9 +110,10 @@ diagnosing and fixing issues with appliance clustering (namely
 problems adding peers), licensing, browser compatibility, and MySQL
 replication.
 
-While my current position and focus is _technically_ the same, given
-the three year hiatus I'm expecting (and eagerly awaiting) some
-interesting changes and will update this section accordingly.
+Since returning, I've been focusing more on critical issues involving
+data loss, system configuration and performance, and relatively newer
+offerings like Data Insight and Universal Collectors both during
+business hours and as part of a developer on-call rotation.
 
 ### ProTech Internet Group (present)
 
@@ -140,13 +141,13 @@ for our health care plan recommendation platform. This primarily
 involved writing Python (most notably Flask and Pandas), Go, and Scala
 as well as working with Chef, AWS, and Jenkins.
 
-Recent endeavors included improving service deployments, automating
-data ingestion and processing tasks, analyzing and producing reports
-of AEP (Medicare annual election period) and non-AEP API traffic,
-designing and building brand new versions of several services, and
-implementing a new load testing suite and tooling using
-[Gatling](https://gatling.io/), which was subsequently used to
-evaluate application performance under various conditions.
+Endeavors included improving service deployments, automating data
+ingestion and processing tasks, analyzing and producing reports of AEP
+(Medicare annual election period) and non-AEP API traffic, designing
+and building brand new versions of several services, and implementing
+a new load testing suite and tooling using
+[Gatling](https://gatling.io/) for evaluating application performance
+under various conditions.
 
 ### Relay Network
 
@@ -169,7 +170,8 @@ member onboarding.
 
 In the summer of 2015, I was a Production Engineering intern at
 Facebook's headquarters in Menlo Park, CA. Here, I worked on the PE
-Mobile team on several projects.
+Mobile team on several projects involving the use of PHP and Hack,
+Python, Phabricator, Chef, and Mercurial.
 
 My primary project was an automated (almost touchless) Android device
 provisioning tool. This tool is used for preparing devices out of the
@@ -177,27 +179,21 @@ box for installation in the mobile device labs, performing tasks such
 as rooting the phone, installing a custom ROM, and making necessary
 configuration changes for remote access and management. By the
 summer's end this tool supported Nexus 4 and 5 (and theoretically most
-other at-least-close-to-vanilla Android devices) and was used to
-provision a bunch of phones at the office and recently a bunch more
-*remotely* in the Prineville, Oregon datacenter.
+other at-least-close-to-vanilla Android devices) and was able to be
+used to provision sets of phones both locally as well as *remotely* in
+the Prineville, OR datacenter.
 
 The second project was a battery monitoring script for Android and iOS
 devices in the device labs. It gathered battery voltage information
 and submitted results to a
 [Scuba](https://www.facebook.com/notes/facebook-engineering/under-the-hood-data-diving-with-scuba/10150599692628920/)
 dataset in order to reveal potential correlations between device
-performance and battery health. This was also a nice introduction to
-Chef through getting the tool deployed to the device host machines.
+performance and battery health.
 
-The final project was a device lab status dashboard that displayed the
-layout of devices in their racks mounted on the walls, their current
-health state, and various other details gathered from multiple data
-sources.
-
-Python, PHP, and Hack were primary languages in use in this
-position. Mercurial was used as source control for most of the
-repositories I worked on and Phabricator was used for source code
-exploration, code reviews, and much more.
+The final project was a web-based device lab status dashboard that
+displayed the layout of devices in their wall-mounted shelves, their
+current health state, and various other details gathered from multiple
+data sources.
 
 ### Vimbly
 
@@ -207,13 +203,13 @@ beginning split testing with [Optimizely](https://www.optimizely.com/)
 and cleanly integrating these tests into the Vimbly website. This soon
 turned into an almost constant stream of various frontend and backend
 (CakePHP) projects primarily concerning the internal administrative
-dashboard and VimblyBot system.
+dashboard, customer-facing booking and payment, and VimblyBot system.
 
 A few larger projects include the integration of CasperJS into the
 VimblyBot infrastructure and the replacement of the existing bot
-batcher with a new, more maintainable scheduler daemon. Other
-operational duties and extra projects involved working with MySQL
-replication, AWS, and Plack.
+batcher (used to fetch and ingest clients' event schedules) with a
+new, more maintainable daemon. Other operational duties and extra
+projects involved working with MySQL replication, AWS, and Plack.
 
 ### Drexel University College of Computing and Informatics
 
@@ -232,7 +228,7 @@ application using some of AT&T's (then) new mobile APIs.
 
 This summer program served as a dry run of the AT&T Summer Coding
 Challenge. This entailed ensuring that deadlines were realistic,
-projects were appropriate, and requirements were clear. It also
-involved implementing the project, for which I wrote a
+project selection was appropriate, and requirements were clear. It
+also involved implementing the project itself, for which I wrote a
 voice-controlled Reddit browser for Android using AT&T's Speech
 Recognition API.
