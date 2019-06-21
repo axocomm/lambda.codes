@@ -2,14 +2,14 @@
 
 import unittest
 
-import app as xyzy
+import app as lambda_codes
 
 
-class XyzyAppTestCase(unittest.TestCase):
+class LambdaCodesAppTestCase(unittest.TestCase):
     def setUp(self):
-        xyzy.app.testing = True
-        xyzy.app.debug = True
-        self.app = xyzy.app.test_client()
+        lambda_codes.app.testing = True
+        lambda_codes.app.debug = True
+        self.app = lambda_codes.app.test_client()
 
     def test_homepage_renders(self):
         """The app should render the homepage at '/'."""
@@ -45,14 +45,14 @@ class XyzyAppTestCase(unittest.TestCase):
 
     def test_minification_without_debug(self):
         """HTML Minification should occur if not in debug mode."""
-        xyzy.app.debug = False
+        lambda_codes.app.debug = False
         rv = self.app.get('/')
         assert rv.status == '200 OK'
         assert b'<!DOCTYPE html><html><head><meta charset="utf-8"/>' in rv.data
 
     def test_minification_with_debug(self):
         """HTML minification should not occur if in debug mode."""
-        xyzy.app.debug = True
+        lambda_codes.app.debug = True
         rv = self.app.get('/')
         assert rv.status == '200 OK'
         assert b'<!doctype html>\n<html>\n  <head>' in rv.data

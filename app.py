@@ -20,12 +20,12 @@ ASSET_DIR = os.path.join(RESOURCE_DIR, 'public')
 NAVIGATION = os.path.join(RESOURCE_DIR, 'navigation.yml')
 
 
-class XyzyApp(Flask):
+class LambdaCodesApp(Flask):
     def __init__(self, import_name, **kwargs):
-        super(XyzyApp, self).__init__(import_name, **kwargs)
+        super(LambdaCodesApp, self).__init__(import_name, **kwargs)
         self.site_title = 'λ.codes'
 
-        self._nav_items = XyzyApp._load_navigation(NAVIGATION)
+        self._nav_items = LambdaCodesApp._load_navigation(NAVIGATION)
 
     def render(self, template, **kwargs):
         """Render a template.
@@ -67,7 +67,7 @@ class XyzyApp(Flask):
         return []
 
 
-app = XyzyApp(
+app = LambdaCodesApp(
     __name__,
     template_folder=os.path.join(RESOURCE_DIR, 'templates'),
     static_folder=ASSET_DIR
