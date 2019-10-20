@@ -83,7 +83,7 @@ def find_title(content):
     lines = content.split('\n')
     matches = [
         line for line in lines
-        if line.startswith('#')
+        if line.startswith('# ')
     ]
 
     if not matches:
