@@ -218,7 +218,7 @@ administrator at the Department of Computer Science on maintaining CS
 and Math department hardware; server installation and configuration;
 and management with RackTables, Nagios, and Puppet. I also provided
 technical support to faculty and students, and began working on a thin
-client lab solution using [LTSP](http://ltsp.org/).
+client lab solution using [LTSP](https://ltsp.github.io/).
 
 ### AT&T Labs
 
