@@ -13,15 +13,16 @@ come courtesy of [Font Awesome](https://fontawesome.com).
 
 ### lcdeploy
 
-[GitHub](https://github.com/axocomm/lcdeploy)<br>
-This is a Ruby gem that allows deployments to be specified using a
-number of straightforward step helper functions (`create_directory`,
+[GitHub](https://github.com/axocomm/lcdeploy)<br> This is a Ruby gem
+that allows deployments to be specified using a number of
+straightforward step helper functions (`create_directory`,
 `copy_file`, `clone_repository`, etc.) and other Ruby code in an
 [`lcdfile`](https://github.com/axocomm/lambda.codes/blob/master/lcdfile).
 It tries to be a little more robust than using `Rakefile`s or shell
 scripts without getting to the level of Chef or Ansible and
 facilitates deploys of basic applications from individual project
-directories using a single file. This is currently getting overhauled.
+directories using a single file. This is currently getting
+[overhauled](https://github.com/axocomm/lcdeploy2).
 
 ### rupervisor
 
