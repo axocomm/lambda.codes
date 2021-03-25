@@ -7,7 +7,7 @@ itsdangerous==0.24
 Jinja2>=2.10.1
 Markdown==2.6.11
 MarkupSafe==1.1.1
-PyYAML==4.2b4
+PyYAML==5.4
 six==1.11.0
 webencodings==0.5.1
 Werkzeug>=0.15.3
