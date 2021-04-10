@@ -22,7 +22,7 @@ NAVIGATION = os.path.join(RESOURCE_DIR, 'navigation.yml')
 
 class LambdaCodesApp(Flask):
     def __init__(self, import_name, **kwargs):
-        super(LambdaCodesApp, self).__init__(import_name, **kwargs)
+        super().__init__(import_name, **kwargs)
         self.site_title = 'λ.codes'
 
         self._nav_items = LambdaCodesApp._load_navigation(NAVIGATION)
@@ -88,8 +88,8 @@ def find_title(content):
 
     if not matches:
         return None
-    else:
-        return matches[0].lstrip('# ')
+
+    return matches[0].lstrip('# ')
 
 
 @app.route('/')
