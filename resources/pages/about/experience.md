@@ -10,7 +10,7 @@
 <li>Clojure/ClojureScript</li>
 <li>Ruby</li>
 <li>Python</li>
-<li>PHP/Hack</li>
+<li>PHP</li>
 <li>Go</li>
 <li>Java</li>
 <li>Perl</li>
