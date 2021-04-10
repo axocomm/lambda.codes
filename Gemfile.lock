@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/axocomm/lcdeploy.git
+  remote: https://github.com/axocomm/lcdeploy.git
   revision: 8eeaf1f1bf982811561a0c24e4bdf3cf2df1ee3a
   specs:
     lcdeploy (0.4)
@@ -16,7 +16,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
     rake (13.0.1)
-    thor (0.20.0)
+    thor (0.20.3)
 
 PLATFORMS
   ruby
@@ -27,4 +27,4 @@ DEPENDENCIES
   rake (>= 12.3.3)
 
 BUNDLED WITH
-   1.16.5
+   2.1.2
