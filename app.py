@@ -63,7 +63,7 @@ class LambdaCodesApp(Flask):
     @staticmethod
     def _load_navigation(filename):
         with open(filename) as fh:
-            return yaml.load(fh.read())
+            return yaml.load(fh.read(), Loader=yaml.BaseLoader)
         return []
 
 
