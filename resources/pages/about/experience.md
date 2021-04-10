@@ -116,23 +116,22 @@ data loss, system configuration and performance, and relatively newer
 offerings like Data Insight and Universal Collectors both during
 business hours and as part of a developer on-call rotation.
 
-### ProTech Internet Group (present)
+### ProTech Internet Group
 
 I began working on small projects with ProTech in 2012 and continued
 over the next few years taking on larger responsibilities. This
-position mostly entails WordPress plugin and theme development but
-often involves full site builds or extensive modifications. Recent
-projects include support and development for a custom eCommerce
-platform, a comprehensive online shopping research tool leveraging
+position mostly entailed WordPress plugin and theme development but
+often involved full site builds or extensive modifications. Projects
+included support and development for a custom eCommerce platform, a
+comprehensive online shopping research tool leveraging
 [Scrapy](https://scrapy.org/) and [Pandas](http://pandas.pydata.org/),
 a third-party media platform integration plugin for WordPress, and an
 Android application for a Y Combinator startup.
 
-I also work on maintaining infrastructure, building internal tools,
-and much more. In late 2015, I was even involved in an [SEO keyword
-study](http://backlinko.com/search-engine-ranking) of 1,000,000 Google
-search results that was even written about in a few different
-publications, including
+I also worked on maintaining infrastructure, building internal tools,
+and much more. In late 2015, I was involved in an SEO keyword study of
+1,000,000 Google search results that was even written about in a few
+different publications, including
 [TechCrunch](http://techcrunch.com/2016/02/12/study-says-data-driven-seo-might-be-possible/).
 
 ### Picwell
@@ -219,7 +218,7 @@ administrator at the Department of Computer Science on maintaining CS
 and Math department hardware; server installation and configuration;
 and management with RackTables, Nagios, and Puppet. I also provided
 technical support to faculty and students, and began working on a thin
-client lab solution using [LTSP](https://ltsp.github.io/).
+client lab solution using [LTSP](https://ltsp.org).
 
 ### AT&T Labs
 
