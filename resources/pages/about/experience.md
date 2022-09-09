@@ -220,7 +220,7 @@ the Prineville, Oregon data centre.
 My second project was a battery monitoring script for Android and iOS
 devices in the device labs. It gathered battery voltage information
 and submitted results to a
-[Scuba](https://www.facebook.com/notes/facebook-engineering/under-the-hood-data-diving-with-scuba/10150599692628920/)
+[Scuba](https://research.facebook.com/publications/scuba-diving-into-data-at-facebook/)
 dataset in order to reveal potential correlations between device
 performance and battery health.
 
