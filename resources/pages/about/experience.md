@@ -10,7 +10,7 @@
 <li>Clojure/ClojureScript</li>
 <li>Ruby</li>
 <li>Python</li>
-<li>PHP</li>
+<li>PHP/Hack</li>
 <li>Go</li>
 <li>Java</li>
 <li>Perl</li>
@@ -97,7 +97,24 @@ B.S. Software Engineering, Drexel University (2011-2016, currently on hiatus)
 
 ## Employment History
 
-### SevOne (present)
+### Vistar Media (present)
+
+I'm currently leading Support Engineering efforts at Vistar
+Media. This team is largely responsible for addressing escalations
+from frontline Support, Product, and Supply teams as well as serving
+as an interconnect with the Engineering organization at-large.
+
+Here, I, along with several others within SE, deal with various
+requests ranging from making configuration, data, and code changes to
+performing deep investigations of improper or unexpected behaviour
+across all parts of the Vistar ad platform; fixing, comprehensively
+documenting, and delegating to specific teams as necessary.
+
+As well, the Support Engineering team is responsible for handling and
+monitoring weekly releases as well as being points of contact for
+outages and other such incidents that may occur.
+
+### SevOne
 
 SevOne began as my second co-op with Drexel and continued part time
 through the fall and winter of 2014-2015 before leaving for Vimbly. I
@@ -111,10 +128,11 @@ diagnosing and fixing issues with appliance clustering (namely
 problems adding peers), licensing, browser compatibility, and MySQL
 replication.
 
-Since returning, I've been focusing more on critical issues involving
-data loss, system configuration and performance, and relatively newer
-offerings like Data Insight and Universal Collectors both during
-business hours and as part of a developer on-call rotation.
+Once I went full-time, I began focusing more on critical issues
+involving data loss, system configuration and performance, and
+relatively newer offerings like Data Insight, Data Bus, and
+Universal Collectors both during business hours and as part of a
+developer on-call rotation.
 
 ### ProTech Internet Group
 
