@@ -10,27 +10,39 @@
 <li>Clojure/ClojureScript</li>
 <li>Ruby</li>
 <li>Python</li>
-<li>PHP/Hack</li>
 <li>Go</li>
 <li>Java</li>
-<li>Perl</li>
+<li>Scala</li>
+<li>JavaScript/TypeScript</li>
 <li>Bash</li>
-<li>C/C++</li>
+<li>Perl</li>
 </ul>
 </div>
 <div class="one-half">
-<ul>
+<li>PHP</li>
+<li>C/C++</li>
 <li>Common Lisp</li>
 <li>Haskell</li>
 <li>Kotlin</li>
-<li>Scala</li>
-<li>HTML</li>
 <li>CSS/SCSS</li>
-<li>JavaScript</li>
+<li>HTML</li>
 <li>LaTeX</li>
-</ul>
 </div>
 </div>
+
+### Frameworks
+
+#### Backend
+
++ Flask
++ CakePHP
++ Ruby on Rails
+
+#### Frontend
+
++ React/Reagent
++ Vue.js
++ ExtJS
 
 ### Tools
 
@@ -39,18 +51,36 @@
 <ul>
 <li>Emacs</li>
 <li>Git</li>
-<li>MySQL</li>
-<li>PostgreSQL</li>
-<li>MongoDB</li>
+<li>Bazel</li>
+<li>Jenkins</li>
 </ul>
 </div>
 <div class="one-half">
 <ul>
-<li>Android SDK</li>
-<li>Vagrant</li>
+<li>Gerrit</li>
 <li>Docker</li>
-<li>Jenkins</li>
+<li>Vagrant</li>
+<li>Android SDK</li>
 </ul>
+</div>
+</div>
+
+### Databases
+
+<div class="row">
+<div class="one-half first">
+<li>PostgreSQL</li>
+<li>MySQL</li>
+<li>MongoDB</li>
+</div>
+</div>
+
+### Clouds
+
+<div class="row">
+<div class="one-half first">
+<li>AWS</li>
+<li>Google Cloud</li>
 </div>
 </div>
 
@@ -59,37 +89,22 @@
 <div class="row" id="language-list">
 <div class="one-half first">
 <ul>
+<li>Datadog</li>
 <li>Nginx/Apache</li>
 <li>Puppet</li>
 <li>Chef</li>
 <li>Ansible</li>
-<li>RackTables</li>
 </ul>
 </div>
 <div class="one-half">
 <ul>
+<li>RackTables</li>
 <li>Nagios</li>
-<li>Proxmox</li>
 <li>SevOne NMS</li>
-<li>AWS</li>
-<li>Google Cloud</li>
+<li>Proxmox</li>
 </ul>
 </div>
 </div>
-
-### Frameworks
-
-#### Backend
-
-+ CakePHP
-+ Ruby on Rails
-+ Flask
-
-#### Frontend
-
-+ Vue.js
-+ React/Reagent
-+ ExtJS
 
 ## Education
 
@@ -118,8 +133,9 @@ outages and other such incidents that may occur.
 
 SevOne began as my second co-op with Drexel and continued part time
 through the fall and winter of 2014-2015 before leaving for Vimbly. I
-resumed briefly after returning from California, and after several
-years recently returned (having finally shed "intern" from my title).
+resumed briefly after returning from California, and several years
+later came back once more (having then finally shed "intern" from my
+title).
 
 As an intern, I primarily took on tasks related to the web application
 component and reporting framework of SevOne NMS, particularly with
@@ -129,10 +145,10 @@ problems adding peers), licensing, browser compatibility, and MySQL
 replication.
 
 Once I went full-time, I began focusing more on critical issues
-involving data loss, system configuration and performance, and
-relatively newer offerings like Data Insight, Data Bus, and
-Universal Collectors both during business hours and as part of a
-developer on-call rotation.
+involving data loss, system configuration and performance, as well as
+relatively newer offerings like Data Insight, Data Bus, and Universal
+Collectors both during business hours and as part of a developer
+on-call rotation.
 
 ### ProTech Internet Group
 
@@ -159,11 +175,11 @@ for our health care plan recommendation platform. This primarily
 involved writing Python (most notably Flask and Pandas), Go, and Scala
 as well as working with Chef, AWS, and Jenkins.
 
-Endeavors included improving service deployments, automating data
-ingestion and processing tasks, analyzing and producing reports of AEP
-(Medicare annual election period) and non-AEP API traffic, designing
-and building brand new versions of several services, and implementing
-a new load testing suite and tooling using
+Endeavours here included improving service deployments, automating
+data ingestion and processing tasks, analyzing and producing reports
+of AEP (Medicare annual election period) and non-AEP API traffic,
+designing and building brand new versions of several services, and
+implementing a new load testing suite and tooling using
 [Gatling](https://gatling.io/) for evaluating application performance
 under various conditions.
 
@@ -199,19 +215,19 @@ configuration changes for remote access and management. By the
 summer's end this tool supported Nexus 4 and 5 (and theoretically most
 other at-least-close-to-vanilla Android devices) and was able to be
 used to provision sets of phones both locally as well as *remotely* in
-the Prineville, OR datacenter.
+the Prineville, Oregon data centre.
 
-The second project was a battery monitoring script for Android and iOS
+My second project was a battery monitoring script for Android and iOS
 devices in the device labs. It gathered battery voltage information
 and submitted results to a
 [Scuba](https://www.facebook.com/notes/facebook-engineering/under-the-hood-data-diving-with-scuba/10150599692628920/)
 dataset in order to reveal potential correlations between device
 performance and battery health.
 
-The final project was a web-based device lab status dashboard that
-displayed the layout of devices in their wall-mounted shelves, their
-current health state, and various other details gathered from multiple
-data sources.
+As a final project, a web-based device lab status dashboard was
+devised which displayed the layout of devices in their wall-mounted
+shelves, their current health state, and various other details
+gathered from multiple data sources.
 
 ### Vimbly
 
