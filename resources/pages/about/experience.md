@@ -67,22 +67,14 @@
 
 ### Databases
 
-<div class="row">
-<div class="one-half first">
-<li>PostgreSQL</li>
-<li>MySQL</li>
-<li>MongoDB</li>
-</div>
-</div>
++ PostgreSQL
++ MySQL
++ MongoDB
 
 ### Clouds
 
-<div class="row">
-<div class="one-half first">
-<li>AWS</li>
-<li>Google Cloud</li>
-</div>
-</div>
++ AWS
++ Google Cloud
 
 ### Administration and Management
 
