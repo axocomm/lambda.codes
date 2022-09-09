@@ -97,6 +97,23 @@ B.S. Software Engineering, Drexel University (2011-2016, currently on hiatus)
 
 ## Employment History
 
+### Vistar Media (present)
+
+I'm currently leading Support Engineering efforts at Vistar
+Media. This team is largely responsible for addressing escalations
+from frontline Support, Product, and Supply teams as well as serving
+as an interconnect with the Engineering organization at-large.
+
+Here, I, along with several others within SE, deal with various
+requests ranging from making configuration, data, and code changes to
+performing deep investigations of improper or unexpected behaviour
+across all parts of the Vistar ad platform; fixing, comprehensively
+documenting, and delegating to specific teams as necessary.
+
+As well, the Support Engineering team is responsible for handling and
+monitoring weekly releases as well as being points of contact for
+outages and other such incidents that may occur.
+
 ### SevOne
 
 SevOne began as my second co-op with Drexel and continued part time
